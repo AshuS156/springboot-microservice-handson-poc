@@ -1,0 +1,979 @@
+2025-11-08T14:40:22.340+05:30  INFO 5160 --- [order-service] [main] com.pathfinder.OrderServiceApplication   : Starting OrderServiceApplication using Java 17.0.3 with PID 5160 (E:\pathfinder\springboot-microservice-handson-poc\order-service\target\classes started by ashus in E:\pathfinder\springboot-microservice-handson-poc\order-service)
+2025-11-08T14:40:22.347+05:30 DEBUG 5160 --- [order-service] [main] com.pathfinder.OrderServiceApplication   : Running with Spring Boot v3.5.6, Spring v6.2.11
+2025-11-08T14:40:22.348+05:30  INFO 5160 --- [order-service] [main] com.pathfinder.OrderServiceApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-11-08T14:40:24.103+05:30  INFO 5160 --- [order-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-11-08T14:40:24.106+05:30  INFO 5160 --- [order-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-11-08T14:40:24.133+05:30  INFO 5160 --- [order-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19 ms. Found 0 JDBC repository interfaces.
+2025-11-08T14:40:24.155+05:30  INFO 5160 --- [order-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-11-08T14:40:24.156+05:30  INFO 5160 --- [order-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-08T14:40:24.166+05:30  INFO 5160 --- [order-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 0 JPA repository interfaces.
+2025-11-08T14:40:24.731+05:30  INFO 5160 --- [order-service] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=27cca67b-78ff-38e4-9156-7d562dd53f47
+2025-11-08T14:40:25.563+05:30  INFO 5160 --- [order-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 5001 (http)
+2025-11-08T14:40:25.586+05:30  INFO 5160 --- [order-service] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-08T14:40:25.586+05:30  INFO 5160 --- [order-service] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-11-08T14:40:25.692+05:30  INFO 5160 --- [order-service] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-08T14:40:25.692+05:30  INFO 5160 --- [order-service] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3265 ms
+2025-11-08T14:40:26.015+05:30  INFO 5160 --- [order-service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-08T14:40:26.104+05:30  INFO 5160 --- [order-service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-11-08T14:40:26.155+05:30  INFO 5160 --- [order-service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-11-08T14:40:26.576+05:30  INFO 5160 --- [order-service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-08T14:40:26.624+05:30  INFO 5160 --- [order-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-11-08T14:40:27.194+05:30  INFO 5160 --- [order-service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6f9a3325
+2025-11-08T14:40:27.197+05:30  INFO 5160 --- [order-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-11-08T14:40:27.296+05:30  WARN 5160 --- [order-service] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-11-08T14:40:27.298+05:30  WARN 5160 --- [order-service] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-11-08T14:40:27.346+05:30  INFO 5160 --- [order-service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-11-08T14:40:28.790+05:30  INFO 5160 --- [order-service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-08T14:40:28.805+05:30  INFO 5160 --- [order-service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-08T14:40:29.101+05:30  WARN 5160 --- [order-service] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'orderServiceWithFeignClient': Unsatisfied dependency expressed through field 'productServiceProxy': No qualifying bean of type 'com.pathfinder.appconfig.ProductServiceProxy' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2025-11-08T14:40:29.101+05:30  INFO 5160 --- [order-service] [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-11-08T14:40:29.214+05:30  INFO 5160 --- [order-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-11-08T14:40:29.468+05:30  INFO 5160 --- [order-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-11-08T14:40:29.471+05:30  INFO 5160 --- [order-service] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-11-08T14:40:29.491+05:30  INFO 5160 --- [order-service] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-11-08T14:40:29.719+05:30 ERROR 5160 --- [order-service] [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field productServiceProxy in com.pathfinder.service.OrderServiceWithFeignClient required a bean of type 'com.pathfinder.appconfig.ProductServiceProxy' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.pathfinder.appconfig.ProductServiceProxy' in your configuration.
+
+2025-11-08T14:41:14.778+05:30  INFO 25772 --- [order-service] [main] com.pathfinder.OrderServiceApplication   : Starting OrderServiceApplication using Java 17.0.3 with PID 25772 (E:\pathfinder\springboot-microservice-handson-poc\order-service\target\classes started by ashus in E:\pathfinder\springboot-microservice-handson-poc\order-service)
+2025-11-08T14:41:14.784+05:30 DEBUG 25772 --- [order-service] [main] com.pathfinder.OrderServiceApplication   : Running with Spring Boot v3.5.6, Spring v6.2.11
+2025-11-08T14:41:14.787+05:30  INFO 25772 --- [order-service] [main] com.pathfinder.OrderServiceApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-11-08T14:41:15.994+05:30  INFO 25772 --- [order-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-11-08T14:41:15.996+05:30  INFO 25772 --- [order-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-11-08T14:41:16.031+05:30  INFO 25772 --- [order-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 23 ms. Found 0 JDBC repository interfaces.
+2025-11-08T14:41:16.049+05:30  INFO 25772 --- [order-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-11-08T14:41:16.051+05:30  INFO 25772 --- [order-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-08T14:41:16.061+05:30  INFO 25772 --- [order-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 0 JPA repository interfaces.
+2025-11-08T14:41:16.587+05:30  INFO 25772 --- [order-service] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=7b2e3ff8-9a68-31b0-8bbe-ae2222ebb825
+2025-11-08T14:41:17.350+05:30  INFO 25772 --- [order-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 5001 (http)
+2025-11-08T14:41:17.372+05:30  INFO 25772 --- [order-service] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-08T14:41:17.373+05:30  INFO 25772 --- [order-service] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-11-08T14:41:17.484+05:30  INFO 25772 --- [order-service] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-08T14:41:17.485+05:30  INFO 25772 --- [order-service] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2602 ms
+2025-11-08T14:41:17.818+05:30  INFO 25772 --- [order-service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-08T14:41:18.020+05:30  INFO 25772 --- [order-service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-11-08T14:41:18.093+05:30  INFO 25772 --- [order-service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-11-08T14:41:18.543+05:30  INFO 25772 --- [order-service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-08T14:41:18.589+05:30  INFO 25772 --- [order-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-11-08T14:41:19.174+05:30  INFO 25772 --- [order-service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@58b5f7d2
+2025-11-08T14:41:19.177+05:30  INFO 25772 --- [order-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-11-08T14:41:19.242+05:30  WARN 25772 --- [order-service] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-11-08T14:41:19.244+05:30  WARN 25772 --- [order-service] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-11-08T14:41:19.271+05:30  INFO 25772 --- [order-service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-11-08T14:41:20.074+05:30  INFO 25772 --- [order-service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-08T14:41:20.085+05:30  INFO 25772 --- [order-service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-08T14:41:20.168+05:30  WARN 25772 --- [order-service] [main] ConfigServletWebServerApplicationContext : Exception encountered during context initialization - cancelling refresh attempt: org.springframework.beans.factory.UnsatisfiedDependencyException: Error creating bean with name 'orderServiceWithFeignClient': Unsatisfied dependency expressed through field 'productServiceProxy': No qualifying bean of type 'com.pathfinder.appconfig.ProductServiceProxy' available: expected at least 1 bean which qualifies as autowire candidate. Dependency annotations: {@org.springframework.beans.factory.annotation.Autowired(required=true)}
+2025-11-08T14:41:20.169+05:30  INFO 25772 --- [order-service] [main] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-11-08T14:41:20.175+05:30  INFO 25772 --- [order-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-11-08T14:41:20.197+05:30  INFO 25772 --- [order-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-11-08T14:41:20.201+05:30  INFO 25772 --- [order-service] [main] o.apache.catalina.core.StandardService   : Stopping service [Tomcat]
+2025-11-08T14:41:20.224+05:30  INFO 25772 --- [order-service] [main] .s.b.a.l.ConditionEvaluationReportLogger : 
+
+Error starting ApplicationContext. To display the condition evaluation report re-run your application with 'debug' enabled.
+2025-11-08T14:41:20.259+05:30 ERROR 25772 --- [order-service] [main] o.s.b.d.LoggingFailureAnalysisReporter   : 
+
+***************************
+APPLICATION FAILED TO START
+***************************
+
+Description:
+
+Field productServiceProxy in com.pathfinder.service.OrderServiceWithFeignClient required a bean of type 'com.pathfinder.appconfig.ProductServiceProxy' that could not be found.
+
+The injection point has the following annotations:
+	- @org.springframework.beans.factory.annotation.Autowired(required=true)
+
+
+Action:
+
+Consider defining a bean of type 'com.pathfinder.appconfig.ProductServiceProxy' in your configuration.
+
+2025-11-08T14:42:25.572+05:30  INFO 11228 --- [order-service] [main] com.pathfinder.OrderServiceApplication   : Starting OrderServiceApplication using Java 17.0.3 with PID 11228 (E:\pathfinder\springboot-microservice-handson-poc\order-service\target\classes started by ashus in E:\pathfinder\springboot-microservice-handson-poc\order-service)
+2025-11-08T14:42:25.577+05:30 DEBUG 11228 --- [order-service] [main] com.pathfinder.OrderServiceApplication   : Running with Spring Boot v3.5.6, Spring v6.2.11
+2025-11-08T14:42:25.582+05:30  INFO 11228 --- [order-service] [main] com.pathfinder.OrderServiceApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-11-08T14:42:27.085+05:30  INFO 11228 --- [order-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-11-08T14:42:27.087+05:30  INFO 11228 --- [order-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-11-08T14:42:27.122+05:30  INFO 11228 --- [order-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22 ms. Found 0 JDBC repository interfaces.
+2025-11-08T14:42:27.142+05:30  INFO 11228 --- [order-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-11-08T14:42:27.144+05:30  INFO 11228 --- [order-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-08T14:42:27.156+05:30  INFO 11228 --- [order-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 JPA repository interfaces.
+2025-11-08T14:42:27.706+05:30  INFO 11228 --- [order-service] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=6230e699-abad-3ccd-bf0b-496c6d8d7915
+2025-11-08T14:42:28.454+05:30  INFO 11228 --- [order-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 5001 (http)
+2025-11-08T14:42:28.479+05:30  INFO 11228 --- [order-service] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-08T14:42:28.480+05:30  INFO 11228 --- [order-service] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-11-08T14:42:28.628+05:30  INFO 11228 --- [order-service] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-08T14:42:28.629+05:30  INFO 11228 --- [order-service] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2983 ms
+2025-11-08T14:42:29.534+05:30  INFO 11228 --- [order-service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-08T14:42:29.636+05:30  INFO 11228 --- [order-service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-11-08T14:42:29.692+05:30  INFO 11228 --- [order-service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-11-08T14:42:30.244+05:30  INFO 11228 --- [order-service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-08T14:42:30.299+05:30  INFO 11228 --- [order-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-11-08T14:42:30.812+05:30  INFO 11228 --- [order-service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1e482ecd
+2025-11-08T14:42:30.815+05:30  INFO 11228 --- [order-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-11-08T14:42:30.890+05:30  WARN 11228 --- [order-service] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-11-08T14:42:30.891+05:30  WARN 11228 --- [order-service] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-11-08T14:42:30.916+05:30  INFO 11228 --- [order-service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-11-08T14:42:31.678+05:30  INFO 11228 --- [order-service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-08T14:42:31.685+05:30  INFO 11228 --- [order-service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-08T14:42:31.784+05:30  WARN 11228 --- [order-service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-08T14:42:33.064+05:30  INFO 11228 --- [order-service] [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2025-11-08T14:42:33.132+05:30  WARN 11228 --- [order-service] [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-11-08T14:42:33.205+05:30  INFO 11228 --- [order-service] [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2025-11-08T14:42:33.243+05:30  INFO 11228 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2025-11-08T14:42:33.248+05:30  INFO 11228 --- [order-service] [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-11-08T14:42:33.262+05:30  INFO 11228 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2025-11-08T14:42:33.262+05:30  INFO 11228 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2025-11-08T14:42:33.263+05:30  INFO 11228 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2025-11-08T14:42:33.263+05:30  INFO 11228 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2025-11-08T14:42:33.263+05:30  INFO 11228 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2025-11-08T14:42:33.263+05:30  INFO 11228 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2025-11-08T14:42:33.263+05:30  INFO 11228 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2025-11-08T14:42:33.840+05:30  INFO 11228 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2025-11-08T14:42:33.843+05:30  INFO 11228 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2025-11-08T14:42:33.846+05:30  INFO 11228 --- [order-service] [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-11-08T14:42:33.848+05:30  INFO 11228 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1762593153847 with initial instances count: 1
+2025-11-08T14:42:33.855+05:30  INFO 11228 --- [order-service] [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application ORDER-SERVICE with eureka with status UP
+2025-11-08T14:42:33.856+05:30  INFO 11228 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1762593153856, current=UP, previous=STARTING]
+2025-11-08T14:42:33.859+05:30  INFO 11228 --- [order-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDER-SERVICE/Vritika:order-service:5001: registering service...
+2025-11-08T14:42:33.899+05:30  INFO 11228 --- [order-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 5001 (http) with context path '/'
+2025-11-08T14:42:33.901+05:30  INFO 11228 --- [order-service] [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 5001
+2025-11-08T14:42:33.951+05:30  INFO 11228 --- [order-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDER-SERVICE/Vritika:order-service:5001 - registration status: 204
+2025-11-08T14:42:34.084+05:30  INFO 11228 --- [order-service] [main] com.pathfinder.OrderServiceApplication   : Started OrderServiceApplication in 9.454 seconds (process running for 10.261)
+2025-11-08T14:43:22.047+05:30  INFO 11228 --- [order-service] [http-nio-5001-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-08T14:43:22.050+05:30  INFO 11228 --- [order-service] [http-nio-5001-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-11-08T14:43:22.055+05:30  INFO 11228 --- [order-service] [http-nio-5001-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 5 ms
+2025-11-08T14:43:22.159+05:30  INFO 11228 --- [order-service] [http-nio-5001-exec-1] c.p.s.OrderServiceWithRestTemplate       : starting of getOrderDetailsByPidUsingLoadbBlancer  !!!!!!!
+2025-11-08T14:43:22.160+05:30 DEBUG 11228 --- [order-service] [http-nio-5001-exec-1] c.p.s.OrderServiceWithRestTemplate       : Full URL to call product service : http://product-service/api/product/loadbalancer/1
+2025-11-08T14:43:24.078+05:30 ERROR 11228 --- [order-service] [http-nio-5001-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: org.springframework.web.client.HttpClientErrorException$NotFound: 404  on GET request for "http://product-service/api/product/loadbalancer/1": "{"timestamp":"2025-11-08T09:13:23.981+00:00","status":404,"error":"Not Found","trace":"org.springframework.web.servlet.resource.NoResourceFoundException: No static resource api/product/loadbalancer/1.\r\n\tat org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585)\r\n\tat org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52)\r\n\tat org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)\r\n\tat org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)\r\n\tat org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)\r\n\tat org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)\r\n\tat jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)\r\n\tat org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)\r\n\tat jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)\r\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)\r\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)\r\n\tat org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)\r\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)\r\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)\r\n\tat org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)\r\n\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)\r\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)\r\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)\r\n\tat org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)\r\n\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)\r\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)\r\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)\r\n\tat org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)\r\n\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)\r\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)\r\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)\r\n\tat org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)\r\n\tat org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)\r\n\tat org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)\r\n\tat org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)\r\n\tat org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)\r\n\tat org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)\r\n\tat org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)\r\n\tat org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)\r\n\tat org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)\r\n\tat org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)\r\n\tat org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1776)\r\n\tat org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)\r\n\tat org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:975)\r\n\tat org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:493)\r\n\tat org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)\r\n\tat java.base/java.lang.Thread.run(Thread.java:833)\r\n","message":"No static resource api/product/loadbalancer/1.","path":"/api/product/loadbalancer/1"}"] with root cause
+
+org.springframework.web.client.HttpClientErrorException$NotFound: 404  on GET request for "http://product-service/api/product/loadbalancer/1": "{"timestamp":"2025-11-08T09:13:23.981+00:00","status":404,"error":"Not Found","trace":"org.springframework.web.servlet.resource.NoResourceFoundException: No static resource api/product/loadbalancer/1.\r\n\tat org.springframework.web.servlet.resource.ResourceHttpRequestHandler.handleRequest(ResourceHttpRequestHandler.java:585)\r\n\tat org.springframework.web.servlet.mvc.HttpRequestHandlerAdapter.handle(HttpRequestHandlerAdapter.java:52)\r\n\tat org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089)\r\n\tat org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979)\r\n\tat org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014)\r\n\tat org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903)\r\n\tat jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564)\r\n\tat org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885)\r\n\tat jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658)\r\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195)\r\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)\r\n\tat org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51)\r\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)\r\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)\r\n\tat org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100)\r\n\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)\r\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)\r\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)\r\n\tat org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93)\r\n\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)\r\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)\r\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)\r\n\tat org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201)\r\n\tat org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116)\r\n\tat org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164)\r\n\tat org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140)\r\n\tat org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167)\r\n\tat org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90)\r\n\tat org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483)\r\n\tat org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116)\r\n\tat org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93)\r\n\tat org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74)\r\n\tat org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344)\r\n\tat org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398)\r\n\tat org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63)\r\n\tat org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903)\r\n\tat org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1776)\r\n\tat org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52)\r\n\tat org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:975)\r\n\tat org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:493)\r\n\tat org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63)\r\n\tat java.base/java.lang.Thread.run(Thread.java:833)\r\n","message":"No static resource api/product/loadbalancer/1.","path":"/api/product/loadbalancer/1"}"
+	at org.springframework.web.client.HttpClientErrorException.create(HttpClientErrorException.java:112) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:186) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.client.DefaultResponseErrorHandler.handleError(DefaultResponseErrorHandler.java:147) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.client.RestTemplate.handleResponse(RestTemplate.java:953) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.client.RestTemplate.doExecute(RestTemplate.java:902) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.client.RestTemplate.execute(RestTemplate.java:801) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.client.RestTemplate.getForEntity(RestTemplate.java:442) ~[spring-web-6.2.11.jar:6.2.11]
+	at com.pathfinder.service.OrderServiceWithRestTemplate.getOrderDetailsUsingLoadBalancer(OrderServiceWithRestTemplate.java:44) ~[classes/:na]
+	at com.pathfinder.controller.OrderControllerWithRestTemplate.getOrderDetailsWithLoadBalancer(OrderControllerWithRestTemplate.java:42) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:991) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:896) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.46.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.46.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1776) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:975) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:493) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2025-11-08T14:45:41.525+05:30  INFO 11228 --- [order-service] [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application ORDER-SERVICE with eureka with status DOWN
+2025-11-08T14:45:41.534+05:30  INFO 11228 --- [order-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1762593341534, current=DOWN, previous=UP]
+2025-11-08T14:45:41.536+05:30  INFO 11228 --- [order-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDER-SERVICE/Vritika:order-service:5001: registering service...
+2025-11-08T14:45:41.566+05:30  INFO 11228 --- [order-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDER-SERVICE/Vritika:order-service:5001 - registration status: 204
+2025-11-08T14:45:41.594+05:30  INFO 11228 --- [order-service] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-08T14:45:41.702+05:30  INFO 11228 --- [order-service] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-11-08T14:45:41.804+05:30  INFO 11228 --- [order-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-11-08T14:45:41.858+05:30  INFO 11228 --- [order-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-11-08T14:45:41.925+05:30  INFO 11228 --- [order-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-11-08T14:45:41.931+05:30  INFO 11228 --- [order-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2025-11-08T14:45:44.936+05:30  INFO 11228 --- [order-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2025-11-08T14:45:45.041+05:30  INFO 11228 --- [order-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDER-SERVICE/Vritika:order-service:5001 - deregister  status: 200
+2025-11-08T14:45:45.042+05:30  INFO 11228 --- [order-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2025-11-08T14:45:51.138+05:30  INFO 4264 --- [order-service] [main] com.pathfinder.OrderServiceApplication   : Starting OrderServiceApplication using Java 17.0.3 with PID 4264 (E:\pathfinder\springboot-microservice-handson-poc\order-service\target\classes started by ashus in E:\pathfinder\springboot-microservice-handson-poc\order-service)
+2025-11-08T14:45:51.142+05:30 DEBUG 4264 --- [order-service] [main] com.pathfinder.OrderServiceApplication   : Running with Spring Boot v3.5.6, Spring v6.2.11
+2025-11-08T14:45:51.143+05:30  INFO 4264 --- [order-service] [main] com.pathfinder.OrderServiceApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-11-08T14:45:52.446+05:30  INFO 4264 --- [order-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-11-08T14:45:52.449+05:30  INFO 4264 --- [order-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-11-08T14:45:52.489+05:30  INFO 4264 --- [order-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22 ms. Found 0 JDBC repository interfaces.
+2025-11-08T14:45:52.507+05:30  INFO 4264 --- [order-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-11-08T14:45:52.509+05:30  INFO 4264 --- [order-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-08T14:45:52.519+05:30  INFO 4264 --- [order-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 2 ms. Found 0 JPA repository interfaces.
+2025-11-08T14:45:53.050+05:30  INFO 4264 --- [order-service] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=6230e699-abad-3ccd-bf0b-496c6d8d7915
+2025-11-08T14:45:53.842+05:30  INFO 4264 --- [order-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 5001 (http)
+2025-11-08T14:45:53.864+05:30  INFO 4264 --- [order-service] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-08T14:45:53.865+05:30  INFO 4264 --- [order-service] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-11-08T14:45:53.977+05:30  INFO 4264 --- [order-service] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-08T14:45:53.978+05:30  INFO 4264 --- [order-service] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2764 ms
+2025-11-08T14:45:54.344+05:30  INFO 4264 --- [order-service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-08T14:45:54.440+05:30  INFO 4264 --- [order-service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-11-08T14:45:54.506+05:30  INFO 4264 --- [order-service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-11-08T14:45:55.224+05:30  INFO 4264 --- [order-service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-08T14:45:55.283+05:30  INFO 4264 --- [order-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-11-08T14:45:56.029+05:30  INFO 4264 --- [order-service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@1e482ecd
+2025-11-08T14:45:56.032+05:30  INFO 4264 --- [order-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-11-08T14:45:56.133+05:30  WARN 4264 --- [order-service] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-11-08T14:45:56.135+05:30  WARN 4264 --- [order-service] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-11-08T14:45:56.193+05:30  INFO 4264 --- [order-service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-11-08T14:45:57.597+05:30  INFO 4264 --- [order-service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-08T14:45:57.606+05:30  INFO 4264 --- [order-service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-08T14:45:58.336+05:30  WARN 4264 --- [order-service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-08T14:46:03.660+05:30  INFO 4264 --- [order-service] [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2025-11-08T14:46:03.774+05:30  WARN 4264 --- [order-service] [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-11-08T14:46:03.868+05:30  INFO 4264 --- [order-service] [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2025-11-08T14:46:03.932+05:30  INFO 4264 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2025-11-08T14:46:03.939+05:30  INFO 4264 --- [order-service] [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-11-08T14:46:03.954+05:30  INFO 4264 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2025-11-08T14:46:03.954+05:30  INFO 4264 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2025-11-08T14:46:03.955+05:30  INFO 4264 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2025-11-08T14:46:03.955+05:30  INFO 4264 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2025-11-08T14:46:03.955+05:30  INFO 4264 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2025-11-08T14:46:03.955+05:30  INFO 4264 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2025-11-08T14:46:03.955+05:30  INFO 4264 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2025-11-08T14:46:04.592+05:30  INFO 4264 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2025-11-08T14:46:04.596+05:30  INFO 4264 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2025-11-08T14:46:04.600+05:30  INFO 4264 --- [order-service] [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-11-08T14:46:04.604+05:30  INFO 4264 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1762593364602 with initial instances count: 1
+2025-11-08T14:46:04.610+05:30  INFO 4264 --- [order-service] [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application ORDER-SERVICE with eureka with status UP
+2025-11-08T14:46:04.613+05:30  INFO 4264 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1762593364613, current=UP, previous=STARTING]
+2025-11-08T14:46:04.617+05:30  INFO 4264 --- [order-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDER-SERVICE/Vritika:order-service:5001: registering service...
+2025-11-08T14:46:04.673+05:30  INFO 4264 --- [order-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 5001 (http) with context path '/'
+2025-11-08T14:46:04.675+05:30  INFO 4264 --- [order-service] [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 5001
+2025-11-08T14:46:04.739+05:30  INFO 4264 --- [order-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDER-SERVICE/Vritika:order-service:5001 - registration status: 204
+2025-11-08T14:46:04.951+05:30  INFO 4264 --- [order-service] [main] com.pathfinder.OrderServiceApplication   : Started OrderServiceApplication in 14.816 seconds (process running for 15.662)
+2025-11-08T14:46:16.041+05:30  INFO 4264 --- [order-service] [http-nio-5001-exec-2] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-08T14:46:16.041+05:30  INFO 4264 --- [order-service] [http-nio-5001-exec-2] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-11-08T14:46:16.043+05:30  INFO 4264 --- [order-service] [http-nio-5001-exec-2] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-11-08T14:46:16.138+05:30  INFO 4264 --- [order-service] [http-nio-5001-exec-2] c.p.s.OrderServiceWithRestTemplate       : starting of getOrderDetailsByPidUsingLoadbBlancer  !!!!!!!
+2025-11-08T14:46:16.139+05:30 DEBUG 4264 --- [order-service] [http-nio-5001-exec-2] c.p.s.OrderServiceWithRestTemplate       : Full URL to call product service : http://product-service/api/product/1
+2025-11-08T14:46:17.449+05:30 DEBUG 4264 --- [order-service] [http-nio-5001-exec-2] c.p.s.OrderServiceWithRestTemplate       : response : <200 OK OK,{"productId":1,"productName":"Charger","price":250,"productCategory":"Electronics","dom":"10-10-2022","doe":" 22-11-2027"},[Content-Type:"application/json", Transfer-Encoding:"chunked", Date:"Sat, 08 Nov 2025 09:16:17 GMT", Keep-Alive:"timeout=60", Connection:"keep-alive"]>
+2025-11-08T14:47:45.560+05:30  INFO 4264 --- [order-service] [http-nio-5001-exec-4] c.p.s.OrderServiceWithRestTemplate       : starting of getOrderDetailsByPidUsingLoadbBlancer  !!!!!!!
+2025-11-08T14:47:45.577+05:30 DEBUG 4264 --- [order-service] [http-nio-5001-exec-4] c.p.s.OrderServiceWithRestTemplate       : Full URL to call product service : http://product-service/api/product/1
+2025-11-08T14:47:46.012+05:30 DEBUG 4264 --- [order-service] [http-nio-5001-exec-4] c.p.s.OrderServiceWithRestTemplate       : response : <200 OK OK,{"productId":1,"productName":"Charger","price":250,"productCategory":"Electronics","dom":"10-10-2022","doe":" 22-11-2027"},[Content-Type:"application/json", Transfer-Encoding:"chunked", Date:"Sat, 08 Nov 2025 09:17:46 GMT", Keep-Alive:"timeout=60", Connection:"keep-alive"]>
+2025-11-08T14:47:47.055+05:30  INFO 4264 --- [order-service] [http-nio-5001-exec-5] c.p.s.OrderServiceWithRestTemplate       : starting of getOrderDetailsByPidUsingLoadbBlancer  !!!!!!!
+2025-11-08T14:47:47.055+05:30 DEBUG 4264 --- [order-service] [http-nio-5001-exec-5] c.p.s.OrderServiceWithRestTemplate       : Full URL to call product service : http://product-service/api/product/1
+2025-11-08T14:47:47.157+05:30 DEBUG 4264 --- [order-service] [http-nio-5001-exec-5] c.p.s.OrderServiceWithRestTemplate       : response : <200 OK OK,{"productId":1,"productName":"Charger","price":250,"productCategory":"Electronics","dom":"10-10-2022","doe":" 22-11-2027"},[Content-Type:"application/json", Transfer-Encoding:"chunked", Date:"Sat, 08 Nov 2025 09:17:47 GMT", Keep-Alive:"timeout=60", Connection:"keep-alive"]>
+2025-11-08T14:47:49.225+05:30  INFO 4264 --- [order-service] [http-nio-5001-exec-7] c.p.s.OrderServiceWithRestTemplate       : starting of getOrderDetailsByPidUsingLoadbBlancer  !!!!!!!
+2025-11-08T14:47:49.226+05:30 DEBUG 4264 --- [order-service] [http-nio-5001-exec-7] c.p.s.OrderServiceWithRestTemplate       : Full URL to call product service : http://product-service/api/product/1
+2025-11-08T14:47:49.246+05:30 DEBUG 4264 --- [order-service] [http-nio-5001-exec-7] c.p.s.OrderServiceWithRestTemplate       : response : <200 OK OK,{"productId":1,"productName":"Charger","price":250,"productCategory":"Electronics","dom":"10-10-2022","doe":" 22-11-2027"},[Content-Type:"application/json", Transfer-Encoding:"chunked", Date:"Sat, 08 Nov 2025 09:17:49 GMT", Keep-Alive:"timeout=60", Connection:"keep-alive"]>
+2025-11-08T14:47:50.176+05:30  INFO 4264 --- [order-service] [http-nio-5001-exec-8] c.p.s.OrderServiceWithRestTemplate       : starting of getOrderDetailsByPidUsingLoadbBlancer  !!!!!!!
+2025-11-08T14:47:50.176+05:30 DEBUG 4264 --- [order-service] [http-nio-5001-exec-8] c.p.s.OrderServiceWithRestTemplate       : Full URL to call product service : http://product-service/api/product/1
+2025-11-08T14:47:50.185+05:30 DEBUG 4264 --- [order-service] [http-nio-5001-exec-8] c.p.s.OrderServiceWithRestTemplate       : response : <200 OK OK,{"productId":1,"productName":"Charger","price":250,"productCategory":"Electronics","dom":"10-10-2022","doe":" 22-11-2027"},[Content-Type:"application/json", Transfer-Encoding:"chunked", Date:"Sat, 08 Nov 2025 09:17:50 GMT", Keep-Alive:"timeout=60", Connection:"keep-alive"]>
+2025-11-08T14:49:38.706+05:30  INFO 4264 --- [order-service] [http-nio-5001-exec-1] c.p.s.OrderServiceWithRestTemplate       : starting of getOrderDetailsByPidUsingLoadbBlancer  !!!!!!!
+2025-11-08T14:49:38.716+05:30 DEBUG 4264 --- [order-service] [http-nio-5001-exec-1] c.p.s.OrderServiceWithRestTemplate       : Full URL to call product service : http://product-service/api/product/1
+2025-11-08T14:49:39.146+05:30 DEBUG 4264 --- [order-service] [http-nio-5001-exec-1] c.p.s.OrderServiceWithRestTemplate       : response : <200 OK OK,{"productId":1,"productName":"Charger","price":250,"productCategory":"Electronics","dom":"10-10-2022","doe":" 22-11-2027"},[Content-Type:"application/json", Transfer-Encoding:"chunked", Date:"Sat, 08 Nov 2025 09:19:39 GMT", Keep-Alive:"timeout=60", Connection:"keep-alive"]>
+2025-11-08T14:49:40.225+05:30  INFO 4264 --- [order-service] [http-nio-5001-exec-2] c.p.s.OrderServiceWithRestTemplate       : starting of getOrderDetailsByPidUsingLoadbBlancer  !!!!!!!
+2025-11-08T14:49:40.225+05:30 DEBUG 4264 --- [order-service] [http-nio-5001-exec-2] c.p.s.OrderServiceWithRestTemplate       : Full URL to call product service : http://product-service/api/product/1
+2025-11-08T14:49:40.409+05:30 DEBUG 4264 --- [order-service] [http-nio-5001-exec-2] c.p.s.OrderServiceWithRestTemplate       : response : <200 OK OK,{"productId":1,"productName":"Charger","price":250,"productCategory":"Electronics","dom":"10-10-2022","doe":" 22-11-2027"},[Content-Type:"application/json", Transfer-Encoding:"chunked", Date:"Sat, 08 Nov 2025 09:19:40 GMT", Keep-Alive:"timeout=60", Connection:"keep-alive"]>
+2025-11-08T14:49:41.443+05:30  INFO 4264 --- [order-service] [http-nio-5001-exec-3] c.p.s.OrderServiceWithRestTemplate       : starting of getOrderDetailsByPidUsingLoadbBlancer  !!!!!!!
+2025-11-08T14:49:41.443+05:30 DEBUG 4264 --- [order-service] [http-nio-5001-exec-3] c.p.s.OrderServiceWithRestTemplate       : Full URL to call product service : http://product-service/api/product/1
+2025-11-08T14:49:41.651+05:30 DEBUG 4264 --- [order-service] [http-nio-5001-exec-3] c.p.s.OrderServiceWithRestTemplate       : response : <200 OK OK,{"productId":1,"productName":"Charger","price":250,"productCategory":"Electronics","dom":"10-10-2022","doe":" 22-11-2027"},[Content-Type:"application/json", Transfer-Encoding:"chunked", Date:"Sat, 08 Nov 2025 09:19:41 GMT", Keep-Alive:"timeout=60", Connection:"keep-alive"]>
+2025-11-08T14:49:42.609+05:30  INFO 4264 --- [order-service] [http-nio-5001-exec-6] c.p.s.OrderServiceWithRestTemplate       : starting of getOrderDetailsByPidUsingLoadbBlancer  !!!!!!!
+2025-11-08T14:49:42.609+05:30 DEBUG 4264 --- [order-service] [http-nio-5001-exec-6] c.p.s.OrderServiceWithRestTemplate       : Full URL to call product service : http://product-service/api/product/1
+2025-11-08T14:49:42.624+05:30 DEBUG 4264 --- [order-service] [http-nio-5001-exec-6] c.p.s.OrderServiceWithRestTemplate       : response : <200 OK OK,{"productId":1,"productName":"Charger","price":250,"productCategory":"Electronics","dom":"10-10-2022","doe":" 22-11-2027"},[Content-Type:"application/json", Transfer-Encoding:"chunked", Date:"Sat, 08 Nov 2025 09:19:42 GMT", Keep-Alive:"timeout=60", Connection:"keep-alive"]>
+2025-11-08T14:51:03.993+05:30  INFO 4264 --- [order-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-11-08T14:54:27.917+05:30  INFO 4264 --- [order-service] [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application ORDER-SERVICE with eureka with status DOWN
+2025-11-08T14:54:27.921+05:30  INFO 4264 --- [order-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1762593867921, current=DOWN, previous=UP]
+2025-11-08T14:54:27.922+05:30  INFO 4264 --- [order-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDER-SERVICE/Vritika:order-service:5001: registering service...
+2025-11-08T14:54:27.961+05:30  INFO 4264 --- [order-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDER-SERVICE/Vritika:order-service:5001 - registration status: 204
+2025-11-08T14:54:28.046+05:30  INFO 4264 --- [order-service] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-08T14:54:28.204+05:30  INFO 4264 --- [order-service] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-11-08T14:54:28.313+05:30  INFO 4264 --- [order-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-11-08T14:54:28.366+05:30  INFO 4264 --- [order-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-11-08T14:54:28.457+05:30  INFO 4264 --- [order-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-11-08T14:54:28.463+05:30  INFO 4264 --- [order-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2025-11-08T14:54:31.479+05:30  INFO 4264 --- [order-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2025-11-08T14:54:31.510+05:30  INFO 4264 --- [order-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDER-SERVICE/Vritika:order-service:5001 - deregister  status: 200
+2025-11-08T14:54:31.516+05:30  INFO 4264 --- [order-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2025-11-08T14:54:39.690+05:30  INFO 1748 --- [order-service] [main] com.pathfinder.OrderServiceApplication   : Starting OrderServiceApplication using Java 17.0.3 with PID 1748 (E:\pathfinder\springboot-microservice-handson-poc\order-service\target\classes started by ashus in E:\pathfinder\springboot-microservice-handson-poc\order-service)
+2025-11-08T14:54:39.695+05:30 DEBUG 1748 --- [order-service] [main] com.pathfinder.OrderServiceApplication   : Running with Spring Boot v3.5.6, Spring v6.2.11
+2025-11-08T14:54:39.697+05:30  INFO 1748 --- [order-service] [main] com.pathfinder.OrderServiceApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-11-08T14:54:41.137+05:30  INFO 1748 --- [order-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-11-08T14:54:41.139+05:30  INFO 1748 --- [order-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-11-08T14:54:41.180+05:30  INFO 1748 --- [order-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 27 ms. Found 0 JDBC repository interfaces.
+2025-11-08T14:54:41.200+05:30  INFO 1748 --- [order-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-11-08T14:54:41.202+05:30  INFO 1748 --- [order-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-08T14:54:41.214+05:30  INFO 1748 --- [order-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 0 JPA repository interfaces.
+2025-11-08T14:54:41.750+05:30  INFO 1748 --- [order-service] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=6230e699-abad-3ccd-bf0b-496c6d8d7915
+2025-11-08T14:54:42.531+05:30  INFO 1748 --- [order-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 5001 (http)
+2025-11-08T14:54:42.561+05:30  INFO 1748 --- [order-service] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-08T14:54:42.562+05:30  INFO 1748 --- [order-service] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-11-08T14:54:42.673+05:30  INFO 1748 --- [order-service] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-08T14:54:42.673+05:30  INFO 1748 --- [order-service] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2887 ms
+2025-11-08T14:54:43.059+05:30  INFO 1748 --- [order-service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-08T14:54:43.144+05:30  INFO 1748 --- [order-service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-11-08T14:54:43.195+05:30  INFO 1748 --- [order-service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-11-08T14:54:43.697+05:30  INFO 1748 --- [order-service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-08T14:54:43.756+05:30  INFO 1748 --- [order-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-11-08T14:54:44.532+05:30  INFO 1748 --- [order-service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@bc52a41
+2025-11-08T14:54:44.535+05:30  INFO 1748 --- [order-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-11-08T14:54:44.632+05:30  WARN 1748 --- [order-service] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-11-08T14:54:44.633+05:30  WARN 1748 --- [order-service] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-11-08T14:54:44.692+05:30  INFO 1748 --- [order-service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-11-08T14:54:45.479+05:30  INFO 1748 --- [order-service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-08T14:54:45.488+05:30  INFO 1748 --- [order-service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-08T14:54:45.661+05:30  WARN 1748 --- [order-service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-08T14:54:47.711+05:30  INFO 1748 --- [order-service] [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2025-11-08T14:54:47.782+05:30  WARN 1748 --- [order-service] [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-11-08T14:54:47.955+05:30  INFO 1748 --- [order-service] [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2025-11-08T14:54:48.146+05:30  INFO 1748 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2025-11-08T14:54:48.154+05:30  INFO 1748 --- [order-service] [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-11-08T14:54:48.205+05:30  INFO 1748 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2025-11-08T14:54:48.206+05:30  INFO 1748 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2025-11-08T14:54:48.206+05:30  INFO 1748 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2025-11-08T14:54:48.206+05:30  INFO 1748 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2025-11-08T14:54:48.207+05:30  INFO 1748 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2025-11-08T14:54:48.207+05:30  INFO 1748 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2025-11-08T14:54:48.207+05:30  INFO 1748 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2025-11-08T14:54:48.827+05:30  INFO 1748 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2025-11-08T14:54:48.831+05:30  INFO 1748 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2025-11-08T14:54:48.839+05:30  INFO 1748 --- [order-service] [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-11-08T14:54:48.846+05:30  INFO 1748 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1762593888844 with initial instances count: 4
+2025-11-08T14:54:48.855+05:30  INFO 1748 --- [order-service] [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application ORDER-SERVICE with eureka with status UP
+2025-11-08T14:54:48.860+05:30  INFO 1748 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1762593888860, current=UP, previous=STARTING]
+2025-11-08T14:54:48.888+05:30  INFO 1748 --- [order-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDER-SERVICE/Vritika:order-service:5001: registering service...
+2025-11-08T14:54:48.935+05:30  INFO 1748 --- [order-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 5001 (http) with context path '/'
+2025-11-08T14:54:48.949+05:30  INFO 1748 --- [order-service] [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 5001
+2025-11-08T14:54:49.025+05:30  INFO 1748 --- [order-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDER-SERVICE/Vritika:order-service:5001 - registration status: 204
+2025-11-08T14:54:49.281+05:30  INFO 1748 --- [order-service] [main] com.pathfinder.OrderServiceApplication   : Started OrderServiceApplication in 10.804 seconds (process running for 11.714)
+2025-11-08T14:55:22.129+05:30  INFO 1748 --- [order-service] [http-nio-5001-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-08T14:55:22.130+05:30  INFO 1748 --- [order-service] [http-nio-5001-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-11-08T14:55:22.134+05:30  INFO 1748 --- [order-service] [http-nio-5001-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2025-11-08T14:55:22.230+05:30  INFO 1748 --- [order-service] [http-nio-5001-exec-1] c.p.s.OrderServiceWithRestTemplate       : starting of getOrderDetailsByPidUsingLoadbBlancer  !!!!!!!
+2025-11-08T14:55:22.231+05:30 DEBUG 1748 --- [order-service] [http-nio-5001-exec-1] c.p.s.OrderServiceWithRestTemplate       : product service base url from properties file : http://product-service/api/product/
+2025-11-08T14:55:22.231+05:30 DEBUG 1748 --- [order-service] [http-nio-5001-exec-1] c.p.s.OrderServiceWithRestTemplate       : Full URL to call product service : http://product-service/api/product/1
+2025-11-08T14:55:22.566+05:30 DEBUG 1748 --- [order-service] [http-nio-5001-exec-1] c.p.s.OrderServiceWithRestTemplate       : response : <200 OK OK,{"productId":1,"productName":"Charger","price":250,"productCategory":"Electronics","dom":"10-10-2022","doe":" 22-11-2027"},[Content-Type:"application/json", Transfer-Encoding:"chunked", Date:"Sat, 08 Nov 2025 09:25:22 GMT", Keep-Alive:"timeout=60", Connection:"keep-alive"]>
+2025-11-08T14:59:48.336+05:30  INFO 1748 --- [order-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-11-08T14:59:50.500+05:30  INFO 1748 --- [order-service] [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application ORDER-SERVICE with eureka with status DOWN
+2025-11-08T14:59:50.502+05:30  INFO 1748 --- [order-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1762594190502, current=DOWN, previous=UP]
+2025-11-08T14:59:50.503+05:30  INFO 1748 --- [order-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDER-SERVICE/Vritika:order-service:5001: registering service...
+2025-11-08T14:59:50.540+05:30  INFO 1748 --- [order-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDER-SERVICE/Vritika:order-service:5001 - registration status: 204
+2025-11-08T14:59:50.627+05:30  INFO 1748 --- [order-service] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-08T14:59:50.806+05:30  INFO 1748 --- [order-service] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-11-08T14:59:50.873+05:30  INFO 1748 --- [order-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-11-08T14:59:50.919+05:30  INFO 1748 --- [order-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-11-08T14:59:50.984+05:30  INFO 1748 --- [order-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-11-08T14:59:50.990+05:30  INFO 1748 --- [order-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2025-11-08T14:59:54.002+05:30  INFO 1748 --- [order-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2025-11-08T14:59:54.036+05:30  INFO 1748 --- [order-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDER-SERVICE/Vritika:order-service:5001 - deregister  status: 200
+2025-11-08T14:59:54.039+05:30  INFO 1748 --- [order-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2025-11-08T15:00:00.356+05:30  INFO 18272 --- [order-service] [main] com.pathfinder.OrderServiceApplication   : Starting OrderServiceApplication using Java 17.0.3 with PID 18272 (E:\pathfinder\springboot-microservice-handson-poc\order-service\target\classes started by ashus in E:\pathfinder\springboot-microservice-handson-poc\order-service)
+2025-11-08T15:00:00.360+05:30 DEBUG 18272 --- [order-service] [main] com.pathfinder.OrderServiceApplication   : Running with Spring Boot v3.5.6, Spring v6.2.11
+2025-11-08T15:00:00.361+05:30  INFO 18272 --- [order-service] [main] com.pathfinder.OrderServiceApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-11-08T15:00:01.791+05:30  INFO 18272 --- [order-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-11-08T15:00:01.794+05:30  INFO 18272 --- [order-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-11-08T15:00:01.901+05:30  INFO 18272 --- [order-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 63 ms. Found 0 JDBC repository interfaces.
+2025-11-08T15:00:01.922+05:30  INFO 18272 --- [order-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-11-08T15:00:01.924+05:30  INFO 18272 --- [order-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-08T15:00:01.936+05:30  INFO 18272 --- [order-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 0 JPA repository interfaces.
+2025-11-08T15:00:02.516+05:30  INFO 18272 --- [order-service] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=6230e699-abad-3ccd-bf0b-496c6d8d7915
+2025-11-08T15:00:03.374+05:30  INFO 18272 --- [order-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 5001 (http)
+2025-11-08T15:00:03.411+05:30  INFO 18272 --- [order-service] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-08T15:00:03.411+05:30  INFO 18272 --- [order-service] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-11-08T15:00:03.515+05:30  INFO 18272 --- [order-service] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-08T15:00:03.515+05:30  INFO 18272 --- [order-service] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3071 ms
+2025-11-08T15:00:03.875+05:30  INFO 18272 --- [order-service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-08T15:00:04.017+05:30  INFO 18272 --- [order-service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-11-08T15:00:04.107+05:30  INFO 18272 --- [order-service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-11-08T15:00:04.676+05:30  INFO 18272 --- [order-service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-08T15:00:04.743+05:30  INFO 18272 --- [order-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-11-08T15:00:05.545+05:30  INFO 18272 --- [order-service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@bc52a41
+2025-11-08T15:00:05.549+05:30  INFO 18272 --- [order-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-11-08T15:00:05.668+05:30  WARN 18272 --- [order-service] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-11-08T15:00:05.671+05:30  WARN 18272 --- [order-service] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-11-08T15:00:05.712+05:30  INFO 18272 --- [order-service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-11-08T15:00:06.541+05:30  INFO 18272 --- [order-service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-08T15:00:06.548+05:30  INFO 18272 --- [order-service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-08T15:00:06.674+05:30  WARN 18272 --- [order-service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-08T15:00:08.499+05:30  INFO 18272 --- [order-service] [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2025-11-08T15:00:08.570+05:30  WARN 18272 --- [order-service] [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-11-08T15:00:08.650+05:30  INFO 18272 --- [order-service] [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2025-11-08T15:00:08.742+05:30  INFO 18272 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2025-11-08T15:00:08.757+05:30  INFO 18272 --- [order-service] [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-11-08T15:00:08.774+05:30  INFO 18272 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2025-11-08T15:00:08.776+05:30  INFO 18272 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2025-11-08T15:00:08.776+05:30  INFO 18272 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2025-11-08T15:00:08.776+05:30  INFO 18272 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2025-11-08T15:00:08.776+05:30  INFO 18272 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2025-11-08T15:00:08.777+05:30  INFO 18272 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2025-11-08T15:00:08.777+05:30  INFO 18272 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2025-11-08T15:00:09.459+05:30  INFO 18272 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2025-11-08T15:00:09.464+05:30  INFO 18272 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2025-11-08T15:00:09.471+05:30  INFO 18272 --- [order-service] [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-11-08T15:00:09.476+05:30  INFO 18272 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1762594209474 with initial instances count: 3
+2025-11-08T15:00:09.489+05:30  INFO 18272 --- [order-service] [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application ORDER-SERVICE with eureka with status UP
+2025-11-08T15:00:09.492+05:30  INFO 18272 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1762594209492, current=UP, previous=STARTING]
+2025-11-08T15:00:09.499+05:30  INFO 18272 --- [order-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDER-SERVICE/Vritika:order-service:5001: registering service...
+2025-11-08T15:00:09.597+05:30  INFO 18272 --- [order-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 5001 (http) with context path '/'
+2025-11-08T15:00:09.603+05:30  INFO 18272 --- [order-service] [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 5001
+2025-11-08T15:00:09.705+05:30  INFO 18272 --- [order-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDER-SERVICE/Vritika:order-service:5001 - registration status: 204
+2025-11-08T15:00:09.973+05:30  INFO 18272 --- [order-service] [main] com.pathfinder.OrderServiceApplication   : Started OrderServiceApplication in 10.667 seconds (process running for 11.54)
+2025-11-08T15:00:16.247+05:30  INFO 18272 --- [order-service] [http-nio-5001-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-08T15:00:16.253+05:30  INFO 18272 --- [order-service] [http-nio-5001-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-11-08T15:00:16.257+05:30  INFO 18272 --- [order-service] [http-nio-5001-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 4 ms
+2025-11-08T15:00:16.384+05:30  INFO 18272 --- [order-service] [http-nio-5001-exec-1] c.p.s.OrderServiceWithRestTemplate       : starting of getOrderDetailsByPidUsingLoadbBlancer  !!!!!!!
+2025-11-08T15:00:16.384+05:30 DEBUG 18272 --- [order-service] [http-nio-5001-exec-1] c.p.s.OrderServiceWithRestTemplate       : Full URL to call product service : http://product-service/api/product/1
+2025-11-08T15:00:16.942+05:30 DEBUG 18272 --- [order-service] [http-nio-5001-exec-1] c.p.s.OrderServiceWithRestTemplate       : response : <200 OK OK,{"productId":1,"productName":"Charger","price":250,"productCategory":"Electronics","dom":"10-10-2022","doe":" 22-11-2027"},[Content-Type:"application/json", Transfer-Encoding:"chunked", Date:"Sat, 08 Nov 2025 09:30:16 GMT", Keep-Alive:"timeout=60", Connection:"keep-alive"]>
+2025-11-08T15:00:34.326+05:30  INFO 18272 --- [order-service] [http-nio-5001-exec-2] c.p.s.OrderServiceWithRestTemplate       : starting of getOrderDetailsByPidUsingLoadbBlancer  !!!!!!!
+2025-11-08T15:00:34.326+05:30 DEBUG 18272 --- [order-service] [http-nio-5001-exec-2] c.p.s.OrderServiceWithRestTemplate       : Full URL to call product service : http://product-service/api/product/1
+2025-11-08T15:00:34.456+05:30 DEBUG 18272 --- [order-service] [http-nio-5001-exec-2] c.p.s.OrderServiceWithRestTemplate       : response : <200 OK OK,{"productId":1,"productName":"Charger","price":250,"productCategory":"Electronics","dom":"10-10-2022","doe":" 22-11-2027"},[Content-Type:"application/json", Transfer-Encoding:"chunked", Date:"Sat, 08 Nov 2025 09:30:34 GMT", Keep-Alive:"timeout=60", Connection:"keep-alive"]>
+2025-11-08T15:00:47.314+05:30  INFO 18272 --- [order-service] [http-nio-5001-exec-4] c.p.s.OrderServiceWithRestTemplate       : starting of getOrderDetailsByPidUsingRestTemplate  !!!!!!!
+2025-11-08T15:00:47.315+05:30 DEBUG 18272 --- [order-service] [http-nio-5001-exec-4] c.p.s.OrderServiceWithRestTemplate       : Full URL to call product service : http://product-service/api/product/1
+2025-11-08T15:00:47.580+05:30 DEBUG 18272 --- [order-service] [http-nio-5001-exec-4] c.p.s.OrderServiceWithRestTemplate       : response : <200 OK OK,{"productId":1,"productName":"Charger","price":250,"productCategory":"Electronics","dom":"10-10-2022","doe":" 22-11-2027"},[Content-Type:"application/json", Transfer-Encoding:"chunked", Date:"Sat, 08 Nov 2025 09:30:47 GMT", Keep-Alive:"timeout=60", Connection:"keep-alive"]>
+2025-11-08T15:00:51.866+05:30 DEBUG 18272 --- [order-service] [http-nio-5001-exec-5] c.p.s.OrderServiceWithRestTemplate       : Full URL to call product service : http://product-service/api/product/fetchallproducts
+2025-11-08T15:00:52.789+05:30 DEBUG 18272 --- [order-service] [http-nio-5001-exec-5] c.p.s.OrderServiceWithRestTemplate       : Response received from downstream system is : <200 OK OK,[{"productId":1,"productName":"Charger","price":250,"productCategory":"Electronics","dom":"10-10-2022","doe":" 22-11-2027"},{"productId":2,"productName":"Mobile","price":25000,"productCategory":"Electronics","dom":"10-10-2012","doe":" 22-11-2057"},{"productId":3,"productName":"TV","price":25000,"productCategory":"Electronics","dom":"10-10-2012","doe":" 22-11-2057"},{"productId":4,"productName":"Extension","price":1200,"productCategory":"Electronics","dom":"10-10-2012","doe":" 22-11-2057"},{"productId":5,"productName":"Watch","price":12000,"productCategory":"Electronics","dom":"10-10-2018","doe":" 22-11-2047"}],[Content-Type:"application/json", Transfer-Encoding:"chunked", Date:"Sat, 08 Nov 2025 09:30:52 GMT", Keep-Alive:"timeout=60", Connection:"keep-alive"]>
+2025-11-08T15:00:52.791+05:30 DEBUG 18272 --- [order-service] [http-nio-5001-exec-5] c.p.c.OrderControllerWithRestTemplate    : Order Details list : [OrderDetails{productId=1, productName='Charger', price=250, productCategory='Electronics'}, OrderDetails{productId=2, productName='Mobile', price=25000, productCategory='Electronics'}, OrderDetails{productId=3, productName='TV', price=25000, productCategory='Electronics'}, OrderDetails{productId=4, productName='Extension', price=1200, productCategory='Electronics'}, OrderDetails{productId=5, productName='Watch', price=12000, productCategory='Electronics'}]
+2025-11-08T15:02:06.576+05:30  INFO 18272 --- [order-service] [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application ORDER-SERVICE with eureka with status DOWN
+2025-11-08T15:02:06.583+05:30  INFO 18272 --- [order-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1762594326583, current=DOWN, previous=UP]
+2025-11-08T15:02:06.584+05:30  INFO 18272 --- [order-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDER-SERVICE/Vritika:order-service:5001: registering service...
+2025-11-08T15:02:06.616+05:30  INFO 18272 --- [order-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDER-SERVICE/Vritika:order-service:5001 - registration status: 204
+2025-11-08T15:02:06.701+05:30  INFO 18272 --- [order-service] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-08T15:02:06.900+05:30  INFO 18272 --- [order-service] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-11-08T15:02:06.998+05:30  INFO 18272 --- [order-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-11-08T15:02:07.044+05:30  INFO 18272 --- [order-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-11-08T15:02:07.134+05:30  INFO 18272 --- [order-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-11-08T15:02:07.139+05:30  INFO 18272 --- [order-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2025-11-08T15:02:10.148+05:30  INFO 18272 --- [order-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2025-11-08T15:02:10.152+05:30  WARN 18272 --- [order-service] [DiscoveryClient-%d] c.netflix.discovery.TimedSupervisorTask  : task supervisor shutting down, can't accept the task
+2025-11-08T15:02:10.175+05:30  INFO 18272 --- [order-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDER-SERVICE/Vritika:order-service:5001 - deregister  status: 200
+2025-11-08T15:02:10.181+05:30  INFO 18272 --- [order-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2025-11-08T15:05:48.544+05:30  INFO 29200 --- [order-service] [main] com.pathfinder.OrderServiceApplication   : Starting OrderServiceApplication using Java 17.0.3 with PID 29200 (E:\pathfinder\springboot-microservice-handson-poc\order-service\target\classes started by ashus in E:\pathfinder\springboot-microservice-handson-poc\order-service)
+2025-11-08T15:05:48.547+05:30 DEBUG 29200 --- [order-service] [main] com.pathfinder.OrderServiceApplication   : Running with Spring Boot v3.5.6, Spring v6.2.11
+2025-11-08T15:05:48.549+05:30  INFO 29200 --- [order-service] [main] com.pathfinder.OrderServiceApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-11-08T15:05:50.208+05:30  INFO 29200 --- [order-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-11-08T15:05:50.211+05:30  INFO 29200 --- [order-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-11-08T15:05:50.253+05:30  INFO 29200 --- [order-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 22 ms. Found 0 JDBC repository interfaces.
+2025-11-08T15:05:50.268+05:30  INFO 29200 --- [order-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-11-08T15:05:50.270+05:30  INFO 29200 --- [order-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-08T15:05:50.283+05:30  INFO 29200 --- [order-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 5 ms. Found 0 JPA repository interfaces.
+2025-11-08T15:05:50.760+05:30  INFO 29200 --- [order-service] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=d3bd9eb6-9572-37db-8afb-20e8c9f65087
+2025-11-08T15:05:51.638+05:30  INFO 29200 --- [order-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 5001 (http)
+2025-11-08T15:05:51.685+05:30  INFO 29200 --- [order-service] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-08T15:05:51.686+05:30  INFO 29200 --- [order-service] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-11-08T15:05:51.801+05:30  INFO 29200 --- [order-service] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-08T15:05:51.803+05:30  INFO 29200 --- [order-service] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3160 ms
+2025-11-08T15:05:52.141+05:30  INFO 29200 --- [order-service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-08T15:05:52.229+05:30  INFO 29200 --- [order-service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-11-08T15:05:52.286+05:30  INFO 29200 --- [order-service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-11-08T15:05:52.698+05:30  INFO 29200 --- [order-service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-08T15:05:52.738+05:30  INFO 29200 --- [order-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-11-08T15:05:53.313+05:30  INFO 29200 --- [order-service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@6294e4a6
+2025-11-08T15:05:53.316+05:30  INFO 29200 --- [order-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-11-08T15:05:53.392+05:30  WARN 29200 --- [order-service] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-11-08T15:05:53.393+05:30  WARN 29200 --- [order-service] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-11-08T15:05:53.424+05:30  INFO 29200 --- [order-service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-11-08T15:05:54.168+05:30  INFO 29200 --- [order-service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-08T15:05:54.180+05:30  INFO 29200 --- [order-service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-08T15:05:54.342+05:30  WARN 29200 --- [order-service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-08T15:05:54.672+05:30  INFO 29200 --- [order-service] [main] o.s.c.openfeign.FeignClientFactoryBean   : For 'product-service' URL not provided. Will try picking an instance via load-balancing.
+2025-11-08T15:05:58.972+05:30  INFO 29200 --- [order-service] [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2025-11-08T15:05:59.027+05:30  WARN 29200 --- [order-service] [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-11-08T15:05:59.098+05:30  INFO 29200 --- [order-service] [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2025-11-08T15:05:59.156+05:30  INFO 29200 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2025-11-08T15:05:59.162+05:30  INFO 29200 --- [order-service] [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-11-08T15:05:59.183+05:30  INFO 29200 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2025-11-08T15:05:59.184+05:30  INFO 29200 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2025-11-08T15:05:59.184+05:30  INFO 29200 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2025-11-08T15:05:59.184+05:30  INFO 29200 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2025-11-08T15:05:59.185+05:30  INFO 29200 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2025-11-08T15:05:59.187+05:30  INFO 29200 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2025-11-08T15:05:59.188+05:30  INFO 29200 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2025-11-08T15:06:00.001+05:30  INFO 29200 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2025-11-08T15:06:00.012+05:30  INFO 29200 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2025-11-08T15:06:00.035+05:30  INFO 29200 --- [order-service] [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-11-08T15:06:00.075+05:30  INFO 29200 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1762594560053 with initial instances count: 3
+2025-11-08T15:06:00.118+05:30  INFO 29200 --- [order-service] [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application ORDER-SERVICE with eureka with status UP
+2025-11-08T15:06:00.121+05:30  INFO 29200 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1762594560121, current=UP, previous=STARTING]
+2025-11-08T15:06:00.128+05:30  INFO 29200 --- [order-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDER-SERVICE/Vritika:order-service:5001: registering service...
+2025-11-08T15:06:00.313+05:30  INFO 29200 --- [order-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 5001 (http) with context path '/'
+2025-11-08T15:06:00.318+05:30  INFO 29200 --- [order-service] [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 5001
+2025-11-08T15:06:00.690+05:30  INFO 29200 --- [order-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDER-SERVICE/Vritika:order-service:5001 - registration status: 204
+2025-11-08T15:06:01.454+05:30  INFO 29200 --- [order-service] [main] com.pathfinder.OrderServiceApplication   : Started OrderServiceApplication in 14.076 seconds (process running for 15.116)
+2025-11-08T15:10:16.242+05:30  INFO 29200 --- [order-service] [http-nio-5001-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-08T15:10:16.246+05:30  INFO 29200 --- [order-service] [http-nio-5001-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-11-08T15:10:16.271+05:30  INFO 29200 --- [order-service] [http-nio-5001-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 25 ms
+2025-11-08T15:10:17.294+05:30 ERROR 29200 --- [order-service] [http-nio-5001-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: feign.FeignException$NotFound: [404] during [GET] to [http://product-service/fetchallproducts] [ProductServiceProxy#getAllProducts()]: [{"timestamp":"2025-11-08T09:40:17.203+00:00","status":404,"error":"Not Found","trace":"org.springframework.web.servlet.resource.NoResourceFoundException: No static resource fetchallproducts.\r\n\tat o... (4263 bytes)]] with root cause
+
+feign.FeignException$NotFound: [404] during [GET] to [http://product-service/fetchallproducts] [ProductServiceProxy#getAllProducts()]: [{"timestamp":"2025-11-08T09:40:17.203+00:00","status":404,"error":"Not Found","trace":"org.springframework.web.servlet.resource.NoResourceFoundException: No static resource fetchallproducts.\r\n\tat o... (4263 bytes)]
+	at feign.FeignException.clientErrorStatus(FeignException.java:249) ~[feign-core-13.6.jar:na]
+	at feign.FeignException.errorStatus(FeignException.java:223) ~[feign-core-13.6.jar:na]
+	at feign.FeignException.errorStatus(FeignException.java:213) ~[feign-core-13.6.jar:na]
+	at feign.codec.ErrorDecoder$Default.decode(ErrorDecoder.java:103) ~[feign-core-13.6.jar:na]
+	at feign.InvocationContext.decodeError(InvocationContext.java:133) ~[feign-core-13.6.jar:na]
+	at feign.InvocationContext.proceed(InvocationContext.java:80) ~[feign-core-13.6.jar:na]
+	at feign.ResponseHandler.handleResponse(ResponseHandler.java:69) ~[feign-core-13.6.jar:na]
+	at feign.SynchronousMethodHandler.executeAndDecode(SynchronousMethodHandler.java:109) ~[feign-core-13.6.jar:na]
+	at feign.SynchronousMethodHandler.invoke(SynchronousMethodHandler.java:53) ~[feign-core-13.6.jar:na]
+	at feign.ReflectiveFeign$FeignInvocationHandler.invoke(ReflectiveFeign.java:104) ~[feign-core-13.6.jar:na]
+	at jdk.proxy2/jdk.proxy2.$Proxy115.getAllProducts(Unknown Source) ~[na:na]
+	at com.pathfinder.service.OrderServiceWithFeignClient.getAllOrderDetails(OrderServiceWithFeignClient.java:32) ~[classes/:na]
+	at com.pathfinder.controller.OrderControllerWithFeignClient.getAllOrderDetails(OrderControllerWithFeignClient.java:34) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:991) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:896) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.46.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.46.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1776) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:975) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:493) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2025-11-08T15:10:59.207+05:30  INFO 29200 --- [order-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-11-08T15:15:59.217+05:30  INFO 29200 --- [order-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-11-08T15:20:59.233+05:30  INFO 29200 --- [order-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-11-08T15:25:59.247+05:30  INFO 29200 --- [order-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-11-08T15:26:47.497+05:30  INFO 29200 --- [order-service] [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application ORDER-SERVICE with eureka with status DOWN
+2025-11-08T15:26:47.501+05:30  INFO 29200 --- [order-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1762595807500, current=DOWN, previous=UP]
+2025-11-08T15:26:47.505+05:30  INFO 29200 --- [order-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDER-SERVICE/Vritika:order-service:5001: registering service...
+2025-11-08T15:26:47.653+05:30  INFO 29200 --- [order-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDER-SERVICE/Vritika:order-service:5001 - registration status: 204
+2025-11-08T15:26:47.688+05:30  INFO 29200 --- [order-service] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-08T15:26:47.870+05:30  INFO 29200 --- [order-service] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-11-08T15:26:48.016+05:30  INFO 29200 --- [order-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-11-08T15:26:48.094+05:30  INFO 29200 --- [order-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-11-08T15:26:48.204+05:30  INFO 29200 --- [order-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-11-08T15:26:48.209+05:30  INFO 29200 --- [order-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2025-11-08T15:26:51.217+05:30  INFO 29200 --- [order-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2025-11-08T15:26:51.250+05:30  INFO 29200 --- [order-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDER-SERVICE/Vritika:order-service:5001 - deregister  status: 200
+2025-11-08T15:26:51.252+05:30  INFO 29200 --- [order-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2025-11-08T15:26:58.006+05:30  INFO 15208 --- [order-service] [main] com.pathfinder.OrderServiceApplication   : Starting OrderServiceApplication using Java 17.0.3 with PID 15208 (E:\pathfinder\springboot-microservice-handson-poc\order-service\target\classes started by ashus in E:\pathfinder\springboot-microservice-handson-poc\order-service)
+2025-11-08T15:26:58.010+05:30 DEBUG 15208 --- [order-service] [main] com.pathfinder.OrderServiceApplication   : Running with Spring Boot v3.5.6, Spring v6.2.11
+2025-11-08T15:26:58.011+05:30  INFO 15208 --- [order-service] [main] com.pathfinder.OrderServiceApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-11-08T15:26:58.089+05:30  WARN 15208 --- [order-service] [main] o.s.c.a.AnnotationBeanNameGenerator      : Although the 'value' attribute in @org.springframework.cloud.loadbalancer.annotation.LoadBalancerClient declares @AliasFor for an attribute other than @Component's 'value' attribute, the value is still used as the @Component name based on convention. As of Spring Framework 7.0, such a 'value' attribute will no longer be used as the @Component name.
+2025-11-08T15:26:59.422+05:30  INFO 15208 --- [order-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-11-08T15:26:59.424+05:30  INFO 15208 --- [order-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-11-08T15:26:59.457+05:30  INFO 15208 --- [order-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 19 ms. Found 0 JDBC repository interfaces.
+2025-11-08T15:26:59.474+05:30  INFO 15208 --- [order-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-11-08T15:26:59.476+05:30  INFO 15208 --- [order-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-08T15:26:59.487+05:30  INFO 15208 --- [order-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 3 ms. Found 0 JPA repository interfaces.
+2025-11-08T15:27:00.342+05:30  INFO 15208 --- [order-service] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=6a30607e-339d-360f-bab1-e237d45a9e11
+2025-11-08T15:27:01.812+05:30  INFO 15208 --- [order-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 5001 (http)
+2025-11-08T15:27:01.920+05:30  INFO 15208 --- [order-service] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-08T15:27:01.920+05:30  INFO 15208 --- [order-service] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-11-08T15:27:02.109+05:30  INFO 15208 --- [order-service] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-08T15:27:02.109+05:30  INFO 15208 --- [order-service] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 4005 ms
+2025-11-08T15:27:02.566+05:30  INFO 15208 --- [order-service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-08T15:27:02.676+05:30  INFO 15208 --- [order-service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-11-08T15:27:02.924+05:30  INFO 15208 --- [order-service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-11-08T15:27:03.488+05:30  INFO 15208 --- [order-service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-08T15:27:03.550+05:30  INFO 15208 --- [order-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-11-08T15:27:04.130+05:30  INFO 15208 --- [order-service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@736788b
+2025-11-08T15:27:04.133+05:30  INFO 15208 --- [order-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-11-08T15:27:04.226+05:30  WARN 15208 --- [order-service] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-11-08T15:27:04.227+05:30  WARN 15208 --- [order-service] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-11-08T15:27:04.285+05:30  INFO 15208 --- [order-service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-11-08T15:27:04.961+05:30  INFO 15208 --- [order-service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-08T15:27:04.970+05:30  INFO 15208 --- [order-service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-08T15:27:05.195+05:30  WARN 15208 --- [order-service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-08T15:27:05.616+05:30  INFO 15208 --- [order-service] [main] o.s.c.openfeign.FeignClientFactoryBean   : For 'product-service' URL not provided. Will try picking an instance via load-balancing.
+2025-11-08T15:27:06.994+05:30  INFO 15208 --- [order-service] [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2025-11-08T15:27:07.033+05:30  WARN 15208 --- [order-service] [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-11-08T15:27:07.074+05:30  INFO 15208 --- [order-service] [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2025-11-08T15:27:07.109+05:30  INFO 15208 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2025-11-08T15:27:07.114+05:30  INFO 15208 --- [order-service] [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-11-08T15:27:07.127+05:30  INFO 15208 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2025-11-08T15:27:07.127+05:30  INFO 15208 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2025-11-08T15:27:07.127+05:30  INFO 15208 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2025-11-08T15:27:07.127+05:30  INFO 15208 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2025-11-08T15:27:07.128+05:30  INFO 15208 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2025-11-08T15:27:07.128+05:30  INFO 15208 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2025-11-08T15:27:07.128+05:30  INFO 15208 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2025-11-08T15:27:07.696+05:30  INFO 15208 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2025-11-08T15:27:07.698+05:30  INFO 15208 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2025-11-08T15:27:07.700+05:30  INFO 15208 --- [order-service] [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-11-08T15:27:07.702+05:30  INFO 15208 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1762595827701 with initial instances count: 3
+2025-11-08T15:27:07.708+05:30  INFO 15208 --- [order-service] [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application ORDER-SERVICE with eureka with status UP
+2025-11-08T15:27:07.709+05:30  INFO 15208 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1762595827709, current=UP, previous=STARTING]
+2025-11-08T15:27:07.712+05:30  INFO 15208 --- [order-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDER-SERVICE/Vritika:order-service:5001: registering service...
+2025-11-08T15:27:07.767+05:30  INFO 15208 --- [order-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 5001 (http) with context path '/'
+2025-11-08T15:27:07.768+05:30  INFO 15208 --- [order-service] [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 5001
+2025-11-08T15:27:07.823+05:30  INFO 15208 --- [order-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDER-SERVICE/Vritika:order-service:5001 - registration status: 204
+2025-11-08T15:27:08.032+05:30  INFO 15208 --- [order-service] [main] com.pathfinder.OrderServiceApplication   : Started OrderServiceApplication in 11.327 seconds (process running for 12.165)
+2025-11-08T15:27:30.189+05:30  INFO 15208 --- [order-service] [http-nio-5001-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-08T15:27:30.190+05:30  INFO 15208 --- [order-service] [http-nio-5001-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-11-08T15:27:30.192+05:30  INFO 15208 --- [order-service] [http-nio-5001-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 1 ms
+2025-11-08T15:27:31.434+05:30 ERROR 15208 --- [order-service] [http-nio-5001-exec-1] o.a.c.c.C.[.[.[/].[dispatcherServlet]    : Servlet.service() for servlet [dispatcherServlet] in context with path [] threw exception [Request processing failed: feign.FeignException$NotFound: [404] during [GET] to [http://product-service/fetchallproducts] [ProductServiceProxy#getAllProducts()]: [{"timestamp":"2025-11-08T09:57:31.349+00:00","status":404,"error":"Not Found","trace":"org.springframework.web.servlet.resource.NoResourceFoundException: No static resource fetchallproducts.\r\n\tat o... (4263 bytes)]] with root cause
+
+feign.FeignException$NotFound: [404] during [GET] to [http://product-service/fetchallproducts] [ProductServiceProxy#getAllProducts()]: [{"timestamp":"2025-11-08T09:57:31.349+00:00","status":404,"error":"Not Found","trace":"org.springframework.web.servlet.resource.NoResourceFoundException: No static resource fetchallproducts.\r\n\tat o... (4263 bytes)]
+	at feign.FeignException.clientErrorStatus(FeignException.java:249) ~[feign-core-13.6.jar:na]
+	at feign.FeignException.errorStatus(FeignException.java:223) ~[feign-core-13.6.jar:na]
+	at feign.FeignException.errorStatus(FeignException.java:213) ~[feign-core-13.6.jar:na]
+	at feign.codec.ErrorDecoder$Default.decode(ErrorDecoder.java:103) ~[feign-core-13.6.jar:na]
+	at feign.InvocationContext.decodeError(InvocationContext.java:133) ~[feign-core-13.6.jar:na]
+	at feign.InvocationContext.proceed(InvocationContext.java:80) ~[feign-core-13.6.jar:na]
+	at feign.ResponseHandler.handleResponse(ResponseHandler.java:69) ~[feign-core-13.6.jar:na]
+	at feign.SynchronousMethodHandler.executeAndDecode(SynchronousMethodHandler.java:109) ~[feign-core-13.6.jar:na]
+	at feign.SynchronousMethodHandler.invoke(SynchronousMethodHandler.java:53) ~[feign-core-13.6.jar:na]
+	at feign.ReflectiveFeign$FeignInvocationHandler.invoke(ReflectiveFeign.java:104) ~[feign-core-13.6.jar:na]
+	at jdk.proxy2/jdk.proxy2.$Proxy116.getAllProducts(Unknown Source) ~[na:na]
+	at com.pathfinder.service.OrderServiceWithFeignClient.getAllOrderDetails(OrderServiceWithFeignClient.java:32) ~[classes/:na]
+	at com.pathfinder.controller.OrderControllerWithFeignClient.getAllOrderDetails(OrderControllerWithFeignClient.java:34) ~[classes/:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method) ~[na:na]
+	at java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77) ~[na:na]
+	at java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43) ~[na:na]
+	at java.base/java.lang.reflect.Method.invoke(Method.java:568) ~[na:na]
+	at org.springframework.web.method.support.InvocableHandlerMethod.doInvoke(InvocableHandlerMethod.java:258) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.method.support.InvocableHandlerMethod.invokeForRequest(InvocableHandlerMethod.java:191) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.ServletInvocableHandlerMethod.invokeAndHandle(ServletInvocableHandlerMethod.java:118) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.invokeHandlerMethod(RequestMappingHandlerAdapter.java:991) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.annotation.RequestMappingHandlerAdapter.handleInternal(RequestMappingHandlerAdapter.java:896) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.mvc.method.AbstractHandlerMethodAdapter.handle(AbstractHandlerMethodAdapter.java:87) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.DispatcherServlet.doDispatch(DispatcherServlet.java:1089) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.DispatcherServlet.doService(DispatcherServlet.java:979) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.FrameworkServlet.processRequest(FrameworkServlet.java:1014) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at org.springframework.web.servlet.FrameworkServlet.doGet(FrameworkServlet.java:903) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:564) ~[tomcat-embed-core-10.1.46.jar:6.0]
+	at org.springframework.web.servlet.FrameworkServlet.service(FrameworkServlet.java:885) ~[spring-webmvc-6.2.11.jar:6.2.11]
+	at jakarta.servlet.http.HttpServlet.service(HttpServlet.java:658) ~[tomcat-embed-core-10.1.46.jar:6.0]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:195) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.websocket.server.WsFilter.doFilter(WsFilter.java:51) ~[tomcat-embed-websocket-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.RequestContextFilter.doFilterInternal(RequestContextFilter.java:100) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.FormContentFilter.doFilterInternal(FormContentFilter.java:93) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.springframework.web.filter.CharacterEncodingFilter.doFilterInternal(CharacterEncodingFilter.java:201) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.springframework.web.filter.OncePerRequestFilter.doFilter(OncePerRequestFilter.java:116) ~[spring-web-6.2.11.jar:6.2.11]
+	at org.apache.catalina.core.ApplicationFilterChain.internalDoFilter(ApplicationFilterChain.java:164) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.ApplicationFilterChain.doFilter(ApplicationFilterChain.java:140) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardWrapperValve.invoke(StandardWrapperValve.java:167) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardContextValve.invoke(StandardContextValve.java:90) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.authenticator.AuthenticatorBase.invoke(AuthenticatorBase.java:483) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardHostValve.invoke(StandardHostValve.java:116) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.valves.ErrorReportValve.invoke(ErrorReportValve.java:93) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.core.StandardEngineValve.invoke(StandardEngineValve.java:74) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.catalina.connector.CoyoteAdapter.service(CoyoteAdapter.java:344) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.http11.Http11Processor.service(Http11Processor.java:398) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.AbstractProcessorLight.process(AbstractProcessorLight.java:63) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.coyote.AbstractProtocol$ConnectionHandler.process(AbstractProtocol.java:903) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.net.NioEndpoint$SocketProcessor.doRun(NioEndpoint.java:1776) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.net.SocketProcessorBase.run(SocketProcessorBase.java:52) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:975) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:493) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at org.apache.tomcat.util.threads.TaskThread$WrappingRunnable.run(TaskThread.java:63) ~[tomcat-embed-core-10.1.46.jar:10.1.46]
+	at java.base/java.lang.Thread.run(Thread.java:833) ~[na:na]
+
+2025-11-08T15:32:07.201+05:30  INFO 15208 --- [order-service] [AsyncResolver-bootstrap-executor-%d] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-11-08T15:34:21.940+05:30  INFO 15208 --- [order-service] [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application ORDER-SERVICE with eureka with status DOWN
+2025-11-08T15:34:21.955+05:30  INFO 15208 --- [order-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1762596261955, current=DOWN, previous=UP]
+2025-11-08T15:34:21.957+05:30  INFO 15208 --- [order-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDER-SERVICE/Vritika:order-service:5001: registering service...
+2025-11-08T15:34:22.042+05:30  INFO 15208 --- [order-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDER-SERVICE/Vritika:order-service:5001 - registration status: 204
+2025-11-08T15:34:22.086+05:30  INFO 15208 --- [order-service] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-08T15:34:22.263+05:30  INFO 15208 --- [order-service] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-11-08T15:34:22.351+05:30  INFO 15208 --- [order-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-11-08T15:34:22.400+05:30  INFO 15208 --- [order-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-11-08T15:34:22.461+05:30  INFO 15208 --- [order-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-11-08T15:34:22.466+05:30  INFO 15208 --- [order-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2025-11-08T15:34:25.472+05:30  INFO 15208 --- [order-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2025-11-08T15:34:25.507+05:30  INFO 15208 --- [order-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDER-SERVICE/Vritika:order-service:5001 - deregister  status: 200
+2025-11-08T15:34:25.511+05:30  INFO 15208 --- [order-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2025-11-08T15:34:31.490+05:30  INFO 18756 --- [order-service] [main] com.pathfinder.OrderServiceApplication   : Starting OrderServiceApplication using Java 17.0.3 with PID 18756 (E:\pathfinder\springboot-microservice-handson-poc\order-service\target\classes started by ashus in E:\pathfinder\springboot-microservice-handson-poc\order-service)
+2025-11-08T15:34:31.493+05:30 DEBUG 18756 --- [order-service] [main] com.pathfinder.OrderServiceApplication   : Running with Spring Boot v3.5.6, Spring v6.2.11
+2025-11-08T15:34:31.494+05:30  INFO 18756 --- [order-service] [main] com.pathfinder.OrderServiceApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-11-08T15:34:31.588+05:30  WARN 18756 --- [order-service] [main] o.s.c.a.AnnotationBeanNameGenerator      : Although the 'value' attribute in @org.springframework.cloud.loadbalancer.annotation.LoadBalancerClient declares @AliasFor for an attribute other than @Component's 'value' attribute, the value is still used as the @Component name based on convention. As of Spring Framework 7.0, such a 'value' attribute will no longer be used as the @Component name.
+2025-11-08T15:34:32.817+05:30  INFO 18756 --- [order-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-11-08T15:34:32.819+05:30  INFO 18756 --- [order-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-11-08T15:34:32.864+05:30  INFO 18756 --- [order-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 32 ms. Found 0 JDBC repository interfaces.
+2025-11-08T15:34:32.894+05:30  INFO 18756 --- [order-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-11-08T15:34:32.898+05:30  INFO 18756 --- [order-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-08T15:34:32.922+05:30  INFO 18756 --- [order-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 7 ms. Found 0 JPA repository interfaces.
+2025-11-08T15:34:33.534+05:30  INFO 18756 --- [order-service] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=6a30607e-339d-360f-bab1-e237d45a9e11
+2025-11-08T15:34:34.380+05:30  INFO 18756 --- [order-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 5001 (http)
+2025-11-08T15:34:34.401+05:30  INFO 18756 --- [order-service] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-08T15:34:34.402+05:30  INFO 18756 --- [order-service] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-11-08T15:34:34.514+05:30  INFO 18756 --- [order-service] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-08T15:34:34.515+05:30  INFO 18756 --- [order-service] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 2922 ms
+2025-11-08T15:34:34.945+05:30  INFO 18756 --- [order-service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-08T15:34:35.105+05:30  INFO 18756 --- [order-service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-11-08T15:34:35.200+05:30  INFO 18756 --- [order-service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-11-08T15:34:35.800+05:30  INFO 18756 --- [order-service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-08T15:34:35.859+05:30  INFO 18756 --- [order-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-11-08T15:34:36.537+05:30  INFO 18756 --- [order-service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@38968752
+2025-11-08T15:34:36.540+05:30  INFO 18756 --- [order-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-11-08T15:34:36.653+05:30  WARN 18756 --- [order-service] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-11-08T15:34:36.659+05:30  WARN 18756 --- [order-service] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-11-08T15:34:36.724+05:30  INFO 18756 --- [order-service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-11-08T15:34:37.519+05:30  INFO 18756 --- [order-service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-08T15:34:37.527+05:30  INFO 18756 --- [order-service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-08T15:34:37.704+05:30  WARN 18756 --- [order-service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-08T15:34:38.195+05:30  INFO 18756 --- [order-service] [main] o.s.c.openfeign.FeignClientFactoryBean   : For 'product-service' URL not provided. Will try picking an instance via load-balancing.
+2025-11-08T15:34:39.648+05:30  INFO 18756 --- [order-service] [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2025-11-08T15:34:39.718+05:30  WARN 18756 --- [order-service] [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-11-08T15:34:39.759+05:30  INFO 18756 --- [order-service] [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2025-11-08T15:34:39.803+05:30  INFO 18756 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2025-11-08T15:34:39.808+05:30  INFO 18756 --- [order-service] [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-11-08T15:34:39.821+05:30  INFO 18756 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2025-11-08T15:34:39.822+05:30  INFO 18756 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2025-11-08T15:34:39.822+05:30  INFO 18756 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2025-11-08T15:34:39.822+05:30  INFO 18756 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2025-11-08T15:34:39.822+05:30  INFO 18756 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2025-11-08T15:34:39.822+05:30  INFO 18756 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2025-11-08T15:34:39.822+05:30  INFO 18756 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2025-11-08T15:34:40.494+05:30  INFO 18756 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2025-11-08T15:34:40.497+05:30  INFO 18756 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2025-11-08T15:34:40.499+05:30  INFO 18756 --- [order-service] [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-11-08T15:34:40.504+05:30  INFO 18756 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1762596280502 with initial instances count: 3
+2025-11-08T15:34:40.512+05:30  INFO 18756 --- [order-service] [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application ORDER-SERVICE with eureka with status UP
+2025-11-08T15:34:40.514+05:30  INFO 18756 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1762596280514, current=UP, previous=STARTING]
+2025-11-08T15:34:40.526+05:30  INFO 18756 --- [order-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDER-SERVICE/Vritika:order-service:5001: registering service...
+2025-11-08T15:34:40.581+05:30  INFO 18756 --- [order-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 5001 (http) with context path '/'
+2025-11-08T15:34:40.583+05:30  INFO 18756 --- [order-service] [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 5001
+2025-11-08T15:34:40.640+05:30  INFO 18756 --- [order-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDER-SERVICE/Vritika:order-service:5001 - registration status: 204
+2025-11-08T15:34:40.813+05:30  INFO 18756 --- [order-service] [main] com.pathfinder.OrderServiceApplication   : Started OrderServiceApplication in 10.388 seconds (process running for 11.297)
+2025-11-08T15:35:01.285+05:30  INFO 18756 --- [order-service] [http-nio-5001-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-08T15:35:01.286+05:30  INFO 18756 --- [order-service] [http-nio-5001-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-11-08T15:35:01.289+05:30  INFO 18756 --- [order-service] [http-nio-5001-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 3 ms
+2025-11-08T15:35:03.496+05:30 DEBUG 18756 --- [order-service] [http-nio-5001-exec-1] c.p.service.OrderServiceWithFeignClient  : response returned by getProductById api  : [OrderDetails{productId=1, productName='Charger', price=250, productCategory='Electronics'}, OrderDetails{productId=2, productName='Mobile', price=25000, productCategory='Electronics'}, OrderDetails{productId=3, productName='TV', price=25000, productCategory='Electronics'}, OrderDetails{productId=4, productName='Extension', price=1200, productCategory='Electronics'}, OrderDetails{productId=5, productName='Watch', price=12000, productCategory='Electronics'}]
+2025-11-08T15:35:03.497+05:30 DEBUG 18756 --- [order-service] [http-nio-5001-exec-1] c.p.c.OrderControllerWithFeignClient     : Order Details list : [OrderDetails{productId=1, productName='Charger', price=250, productCategory='Electronics'}, OrderDetails{productId=2, productName='Mobile', price=25000, productCategory='Electronics'}, OrderDetails{productId=3, productName='TV', price=25000, productCategory='Electronics'}, OrderDetails{productId=4, productName='Extension', price=1200, productCategory='Electronics'}, OrderDetails{productId=5, productName='Watch', price=12000, productCategory='Electronics'}]
+2025-11-08T15:36:49.193+05:30 DEBUG 18756 --- [order-service] [http-nio-5001-exec-5] c.p.service.OrderServiceWithFeignClient  : response returned by getProductById api  : [OrderDetails{productId=1, productName='Charger', price=250, productCategory='Electronics'}, OrderDetails{productId=2, productName='Mobile', price=25000, productCategory='Electronics'}, OrderDetails{productId=3, productName='TV', price=25000, productCategory='Electronics'}, OrderDetails{productId=4, productName='Extension', price=1200, productCategory='Electronics'}, OrderDetails{productId=5, productName='Watch', price=12000, productCategory='Electronics'}]
+2025-11-08T15:36:49.212+05:30 DEBUG 18756 --- [order-service] [http-nio-5001-exec-5] c.p.c.OrderControllerWithFeignClient     : Order Details list : [OrderDetails{productId=1, productName='Charger', price=250, productCategory='Electronics'}, OrderDetails{productId=2, productName='Mobile', price=25000, productCategory='Electronics'}, OrderDetails{productId=3, productName='TV', price=25000, productCategory='Electronics'}, OrderDetails{productId=4, productName='Extension', price=1200, productCategory='Electronics'}, OrderDetails{productId=5, productName='Watch', price=12000, productCategory='Electronics'}]
+2025-11-08T15:36:50.768+05:30 DEBUG 18756 --- [order-service] [http-nio-5001-exec-7] c.p.service.OrderServiceWithFeignClient  : response returned by getProductById api  : [OrderDetails{productId=1, productName='Charger', price=250, productCategory='Electronics'}, OrderDetails{productId=2, productName='Mobile', price=25000, productCategory='Electronics'}, OrderDetails{productId=3, productName='TV', price=25000, productCategory='Electronics'}, OrderDetails{productId=4, productName='Extension', price=1200, productCategory='Electronics'}, OrderDetails{productId=5, productName='Watch', price=12000, productCategory='Electronics'}]
+2025-11-08T15:36:50.768+05:30 DEBUG 18756 --- [order-service] [http-nio-5001-exec-7] c.p.c.OrderControllerWithFeignClient     : Order Details list : [OrderDetails{productId=1, productName='Charger', price=250, productCategory='Electronics'}, OrderDetails{productId=2, productName='Mobile', price=25000, productCategory='Electronics'}, OrderDetails{productId=3, productName='TV', price=25000, productCategory='Electronics'}, OrderDetails{productId=4, productName='Extension', price=1200, productCategory='Electronics'}, OrderDetails{productId=5, productName='Watch', price=12000, productCategory='Electronics'}]
+2025-11-08T15:36:52.112+05:30 DEBUG 18756 --- [order-service] [http-nio-5001-exec-8] c.p.service.OrderServiceWithFeignClient  : response returned by getProductById api  : [OrderDetails{productId=1, productName='Charger', price=250, productCategory='Electronics'}, OrderDetails{productId=2, productName='Mobile', price=25000, productCategory='Electronics'}, OrderDetails{productId=3, productName='TV', price=25000, productCategory='Electronics'}, OrderDetails{productId=4, productName='Extension', price=1200, productCategory='Electronics'}, OrderDetails{productId=5, productName='Watch', price=12000, productCategory='Electronics'}]
+2025-11-08T15:36:52.112+05:30 DEBUG 18756 --- [order-service] [http-nio-5001-exec-8] c.p.c.OrderControllerWithFeignClient     : Order Details list : [OrderDetails{productId=1, productName='Charger', price=250, productCategory='Electronics'}, OrderDetails{productId=2, productName='Mobile', price=25000, productCategory='Electronics'}, OrderDetails{productId=3, productName='TV', price=25000, productCategory='Electronics'}, OrderDetails{productId=4, productName='Extension', price=1200, productCategory='Electronics'}, OrderDetails{productId=5, productName='Watch', price=12000, productCategory='Electronics'}]
+2025-11-08T15:36:53.103+05:30 DEBUG 18756 --- [order-service] [http-nio-5001-exec-9] c.p.service.OrderServiceWithFeignClient  : response returned by getProductById api  : [OrderDetails{productId=1, productName='Charger', price=250, productCategory='Electronics'}, OrderDetails{productId=2, productName='Mobile', price=25000, productCategory='Electronics'}, OrderDetails{productId=3, productName='TV', price=25000, productCategory='Electronics'}, OrderDetails{productId=4, productName='Extension', price=1200, productCategory='Electronics'}, OrderDetails{productId=5, productName='Watch', price=12000, productCategory='Electronics'}]
+2025-11-08T15:36:53.104+05:30 DEBUG 18756 --- [order-service] [http-nio-5001-exec-9] c.p.c.OrderControllerWithFeignClient     : Order Details list : [OrderDetails{productId=1, productName='Charger', price=250, productCategory='Electronics'}, OrderDetails{productId=2, productName='Mobile', price=25000, productCategory='Electronics'}, OrderDetails{productId=3, productName='TV', price=25000, productCategory='Electronics'}, OrderDetails{productId=4, productName='Extension', price=1200, productCategory='Electronics'}, OrderDetails{productId=5, productName='Watch', price=12000, productCategory='Electronics'}]
+2025-11-08T15:37:36.890+05:30  INFO 18756 --- [order-service] [SpringApplicationShutdownHook] o.s.c.n.e.s.EurekaServiceRegistry        : Unregistering application ORDER-SERVICE with eureka with status DOWN
+2025-11-08T15:37:36.897+05:30  INFO 18756 --- [order-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1762596456895, current=DOWN, previous=UP]
+2025-11-08T15:37:36.898+05:30  INFO 18756 --- [order-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDER-SERVICE/Vritika:order-service:5001: registering service...
+2025-11-08T15:37:36.992+05:30  INFO 18756 --- [order-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDER-SERVICE/Vritika:order-service:5001 - registration status: 204
+2025-11-08T15:37:37.034+05:30  INFO 18756 --- [order-service] [SpringApplicationShutdownHook] o.s.b.w.e.tomcat.GracefulShutdown        : Commencing graceful shutdown. Waiting for active requests to complete
+2025-11-08T15:37:37.199+05:30  INFO 18756 --- [order-service] [tomcat-shutdown] o.s.b.w.e.tomcat.GracefulShutdown        : Graceful shutdown complete
+2025-11-08T15:37:37.300+05:30  INFO 18756 --- [order-service] [SpringApplicationShutdownHook] j.LocalContainerEntityManagerFactoryBean : Closing JPA EntityManagerFactory for persistence unit 'default'
+2025-11-08T15:37:37.352+05:30  INFO 18756 --- [order-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown initiated...
+2025-11-08T15:37:37.459+05:30  INFO 18756 --- [order-service] [SpringApplicationShutdownHook] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Shutdown completed.
+2025-11-08T15:37:37.465+05:30  INFO 18756 --- [order-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Shutting down DiscoveryClient ...
+2025-11-08T15:37:40.475+05:30  INFO 18756 --- [order-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Unregistering ...
+2025-11-08T15:37:40.494+05:30  INFO 18756 --- [order-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDER-SERVICE/Vritika:order-service:5001 - deregister  status: 200
+2025-11-08T15:37:40.496+05:30  INFO 18756 --- [order-service] [SpringApplicationShutdownHook] com.netflix.discovery.DiscoveryClient    : Completed shut down of DiscoveryClient
+2025-11-08T15:37:47.278+05:30  INFO 26532 --- [order-service] [main] com.pathfinder.OrderServiceApplication   : Starting OrderServiceApplication using Java 17.0.3 with PID 26532 (E:\pathfinder\springboot-microservice-handson-poc\order-service\target\classes started by ashus in E:\pathfinder\springboot-microservice-handson-poc\order-service)
+2025-11-08T15:37:47.286+05:30 DEBUG 26532 --- [order-service] [main] com.pathfinder.OrderServiceApplication   : Running with Spring Boot v3.5.6, Spring v6.2.11
+2025-11-08T15:37:47.287+05:30  INFO 26532 --- [order-service] [main] com.pathfinder.OrderServiceApplication   : No active profile set, falling back to 1 default profile: "default"
+2025-11-08T15:37:49.134+05:30  INFO 26532 --- [order-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-11-08T15:37:49.137+05:30  INFO 26532 --- [order-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JDBC repositories in DEFAULT mode.
+2025-11-08T15:37:49.197+05:30  INFO 26532 --- [order-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 29 ms. Found 0 JDBC repository interfaces.
+2025-11-08T15:37:49.221+05:30  INFO 26532 --- [order-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Multiple Spring Data modules found, entering strict repository configuration mode
+2025-11-08T15:37:49.225+05:30  INFO 26532 --- [order-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Bootstrapping Spring Data JPA repositories in DEFAULT mode.
+2025-11-08T15:37:49.248+05:30  INFO 26532 --- [order-service] [main] .s.d.r.c.RepositoryConfigurationDelegate : Finished Spring Data repository scanning in 8 ms. Found 0 JPA repository interfaces.
+2025-11-08T15:37:49.960+05:30  INFO 26532 --- [order-service] [main] o.s.cloud.context.scope.GenericScope     : BeanFactory id=d3bd9eb6-9572-37db-8afb-20e8c9f65087
+2025-11-08T15:37:50.946+05:30  INFO 26532 --- [order-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port 5001 (http)
+2025-11-08T15:37:50.971+05:30  INFO 26532 --- [order-service] [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2025-11-08T15:37:50.972+05:30  INFO 26532 --- [order-service] [main] o.apache.catalina.core.StandardEngine    : Starting Servlet engine: [Apache Tomcat/10.1.46]
+2025-11-08T15:37:51.133+05:30  INFO 26532 --- [order-service] [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2025-11-08T15:37:51.135+05:30  INFO 26532 --- [order-service] [main] w.s.c.ServletWebServerApplicationContext : Root WebApplicationContext: initialization completed in 3739 ms
+2025-11-08T15:37:51.694+05:30  INFO 26532 --- [order-service] [main] o.hibernate.jpa.internal.util.LogHelper  : HHH000204: Processing PersistenceUnitInfo [name: default]
+2025-11-08T15:37:51.820+05:30  INFO 26532 --- [order-service] [main] org.hibernate.Version                    : HHH000412: Hibernate ORM core version 6.6.29.Final
+2025-11-08T15:37:52.040+05:30  INFO 26532 --- [order-service] [main] o.h.c.internal.RegionFactoryInitiator    : HHH000026: Second-level cache disabled
+2025-11-08T15:37:52.739+05:30  INFO 26532 --- [order-service] [main] o.s.o.j.p.SpringPersistenceUnitInfo      : No LoadTimeWeaver setup: ignoring JPA class transformer
+2025-11-08T15:37:52.805+05:30  INFO 26532 --- [order-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Starting...
+2025-11-08T15:37:53.592+05:30  INFO 26532 --- [order-service] [main] com.zaxxer.hikari.pool.HikariPool        : HikariPool-1 - Added connection com.mysql.cj.jdbc.ConnectionImpl@201a8ea7
+2025-11-08T15:37:53.595+05:30  INFO 26532 --- [order-service] [main] com.zaxxer.hikari.HikariDataSource       : HikariPool-1 - Start completed.
+2025-11-08T15:37:53.709+05:30  WARN 26532 --- [order-service] [main] org.hibernate.orm.deprecation            : HHH90000025: MySQL8Dialect does not need to be specified explicitly using 'hibernate.dialect' (remove the property setting and it will be selected by default)
+2025-11-08T15:37:53.712+05:30  WARN 26532 --- [order-service] [main] org.hibernate.orm.deprecation            : HHH90000026: MySQL8Dialect has been deprecated; use org.hibernate.dialect.MySQLDialect instead
+2025-11-08T15:37:53.763+05:30  INFO 26532 --- [order-service] [main] org.hibernate.orm.connections.pooling    : HHH10001005: Database info:
+	Database JDBC URL [Connecting through datasource 'HikariDataSource (HikariPool-1)']
+	Database driver: undefined/unknown
+	Database version: 8.0
+	Autocommit mode: undefined/unknown
+	Isolation level: undefined/unknown
+	Minimum pool size: undefined/unknown
+	Maximum pool size: undefined/unknown
+2025-11-08T15:37:54.882+05:30  INFO 26532 --- [order-service] [main] o.h.e.t.j.p.i.JtaPlatformInitiator       : HHH000489: No JTA platform available (set 'hibernate.transaction.jta.platform' to enable JTA platform integration)
+2025-11-08T15:37:54.898+05:30  INFO 26532 --- [order-service] [main] j.LocalContainerEntityManagerFactoryBean : Initialized JPA EntityManagerFactory for persistence unit 'default'
+2025-11-08T15:37:56.044+05:30  WARN 26532 --- [order-service] [main] JpaBaseConfiguration$JpaWebConfiguration : spring.jpa.open-in-view is enabled by default. Therefore, database queries may be performed during view rendering. Explicitly configure spring.jpa.open-in-view to disable this warning
+2025-11-08T15:37:56.619+05:30  INFO 26532 --- [order-service] [main] o.s.c.openfeign.FeignClientFactoryBean   : For 'product-service' URL not provided. Will try picking an instance via load-balancing.
+2025-11-08T15:37:58.460+05:30  INFO 26532 --- [order-service] [main] DiscoveryClientOptionalArgsConfiguration : Eureka HTTP Client uses RestTemplate.
+2025-11-08T15:37:58.511+05:30  WARN 26532 --- [order-service] [main] iguration$LoadBalancerCaffeineWarnLogger : Spring Cloud LoadBalancer is currently working with the default cache. While this cache implementation is useful for development and tests, it's recommended to use Caffeine cache in production.You can switch to using Caffeine cache, by adding it and org.springframework.cache.caffeine.CaffeineCacheManager to the classpath.
+2025-11-08T15:37:58.564+05:30  INFO 26532 --- [order-service] [main] o.s.c.n.eureka.InstanceInfoFactory       : Setting initial instance status as: STARTING
+2025-11-08T15:37:58.606+05:30  INFO 26532 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Initializing Eureka in region us-east-1
+2025-11-08T15:37:58.612+05:30  INFO 26532 --- [order-service] [main] c.n.d.s.r.aws.ConfigClusterResolver      : Resolving eureka endpoints via configuration
+2025-11-08T15:37:58.625+05:30  INFO 26532 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Disable delta property : false
+2025-11-08T15:37:58.625+05:30  INFO 26532 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Single vip registry refresh property : null
+2025-11-08T15:37:58.625+05:30  INFO 26532 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Force full registry fetch : false
+2025-11-08T15:37:58.626+05:30  INFO 26532 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Application is null : false
+2025-11-08T15:37:58.626+05:30  INFO 26532 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Registered Applications size is zero : true
+2025-11-08T15:37:58.626+05:30  INFO 26532 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Application version is -1: true
+2025-11-08T15:37:58.626+05:30  INFO 26532 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Getting all instance registry info from the eureka server
+2025-11-08T15:37:59.347+05:30  INFO 26532 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : The response status is 200
+2025-11-08T15:37:59.352+05:30  INFO 26532 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Starting heartbeat executor: renew interval is: 30
+2025-11-08T15:37:59.355+05:30  INFO 26532 --- [order-service] [main] c.n.discovery.InstanceInfoReplicator     : InstanceInfoReplicator onDemand update allowed rate per min is 4
+2025-11-08T15:37:59.359+05:30  INFO 26532 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Discovery Client initialized at timestamp 1762596479357 with initial instances count: 4
+2025-11-08T15:37:59.365+05:30  INFO 26532 --- [order-service] [main] o.s.c.n.e.s.EurekaServiceRegistry        : Registering application ORDER-SERVICE with eureka with status UP
+2025-11-08T15:37:59.365+05:30  INFO 26532 --- [order-service] [main] com.netflix.discovery.DiscoveryClient    : Saw local status change event StatusChangeEvent [timestamp=1762596479365, current=UP, previous=STARTING]
+2025-11-08T15:37:59.368+05:30  INFO 26532 --- [order-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDER-SERVICE/Vritika:order-service:5001: registering service...
+2025-11-08T15:37:59.409+05:30  INFO 26532 --- [order-service] [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port 5001 (http) with context path '/'
+2025-11-08T15:37:59.412+05:30  INFO 26532 --- [order-service] [main] .s.c.n.e.s.EurekaAutoServiceRegistration : Updating port to 5001
+2025-11-08T15:37:59.443+05:30  INFO 26532 --- [order-service] [DiscoveryClient-InstanceInfoReplicator-%d] com.netflix.discovery.DiscoveryClient    : DiscoveryClient_ORDER-SERVICE/Vritika:order-service:5001 - registration status: 204
+2025-11-08T15:37:59.660+05:30  INFO 26532 --- [order-service] [main] com.pathfinder.OrderServiceApplication   : Started OrderServiceApplication in 13.524 seconds (process running for 14.381)
+2025-11-08T15:38:32.178+05:30  INFO 26532 --- [order-service] [http-nio-5001-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2025-11-08T15:38:32.202+05:30  INFO 26532 --- [order-service] [http-nio-5001-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2025-11-08T15:38:32.237+05:30  INFO 26532 --- [order-service] [http-nio-5001-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 34 ms
+2025-11-08T15:38:34.354+05:30 DEBUG 26532 --- [order-service] [http-nio-5001-exec-1] c.p.service.OrderServiceWithFeignClient  : response returned by getProductById api  : [OrderDetails{productId=1, productName='Charger', price=250, productCategory='Electronics'}, OrderDetails{productId=2, productName='Mobile', price=25000, productCategory='Electronics'}, OrderDetails{productId=3, productName='TV', price=25000, productCategory='Electronics'}, OrderDetails{productId=4, productName='Extension', price=1200, productCategory='Electronics'}, OrderDetails{productId=5, productName='Watch', price=12000, productCategory='Electronics'}]
+2025-11-08T15:38:34.357+05:30 DEBUG 26532 --- [order-service] [http-nio-5001-exec-1] c.p.c.OrderControllerWithFeignClient     : Order Details list : [OrderDetails{productId=1, productName='Charger', price=250, productCategory='Electronics'}, OrderDetails{productId=2, productName='Mobile', price=25000, productCategory='Electronics'}, OrderDetails{productId=3, productName='TV', price=25000, productCategory='Electronics'}, OrderDetails{productId=4, productName='Extension', price=1200, productCategory='Electronics'}, OrderDetails{productId=5, productName='Watch', price=12000, productCategory='Electronics'}]
+2025-11-08T15:38:36.829+05:30 DEBUG 26532 --- [order-service] [http-nio-5001-exec-2] c.p.service.OrderServiceWithFeignClient  : response returned by getProductById api  : [OrderDetails{productId=1, productName='Charger', price=250, productCategory='Electronics'}, OrderDetails{productId=2, productName='Mobile', price=25000, productCategory='Electronics'}, OrderDetails{productId=3, productName='TV', price=25000, productCategory='Electronics'}, OrderDetails{productId=4, productName='Extension', price=1200, productCategory='Electronics'}, OrderDetails{productId=5, productName='Watch', price=12000, productCategory='Electronics'}]
+2025-11-08T15:38:36.830+05:30 DEBUG 26532 --- [order-service] [http-nio-5001-exec-2] c.p.c.OrderControllerWithFeignClient     : Order Details list : [OrderDetails{productId=1, productName='Charger', price=250, productCategory='Electronics'}, OrderDetails{productId=2, productName='Mobile', price=25000, productCategory='Electronics'}, OrderDetails{productId=3, productName='TV', price=25000, productCategory='Electronics'}, OrderDetails{productId=4, productName='Extension', price=1200, productCategory='Electronics'}, OrderDetails{productId=5, productName='Watch', price=12000, productCategory='Electronics'}]
+2025-11-08T15:38:38.900+05:30 DEBUG 26532 --- [order-service] [http-nio-5001-exec-4] c.p.service.OrderServiceWithFeignClient  : response returned by getProductById api  : [OrderDetails{productId=1, productName='Charger', price=250, productCategory='Electronics'}, OrderDetails{productId=2, productName='Mobile', price=25000, productCategory='Electronics'}, OrderDetails{productId=3, productName='TV', price=25000, productCategory='Electronics'}, OrderDetails{productId=4, productName='Extension', price=1200, productCategory='Electronics'}, OrderDetails{productId=5, productName='Watch', price=12000, productCategory='Electronics'}]
+2025-11-08T15:38:38.900+05:30 DEBUG 26532 --- [order-service] [http-nio-5001-exec-4] c.p.c.OrderControllerWithFeignClient     : Order Details list : [OrderDetails{productId=1, productName='Charger', price=250, productCategory='Electronics'}, OrderDetails{productId=2, productName='Mobile', price=25000, productCategory='Electronics'}, OrderDetails{productId=3, productName='TV', price=25000, productCategory='Electronics'}, OrderDetails{productId=4, productName='Extension', price=1200, productCategory='Electronics'}, OrderDetails{productId=5, productName='Watch', price=12000, productCategory='Electronics'}]
+2025-11-08T15:38:40.507+05:30 DEBUG 26532 --- [order-service] [http-nio-5001-exec-5] c.p.service.OrderServiceWithFeignClient  : response returned by getProductById api  : [OrderDetails{productId=1, productName='Charger', price=250, productCategory='Electronics'}, OrderDetails{productId=2, productName='Mobile', price=25000, productCategory='Electronics'}, OrderDetails{productId=3, productName='TV', price=25000, productCategory='Electronics'}, OrderDetails{productId=4, productName='Extension', price=1200, productCategory='Electronics'}, OrderDetails{productId=5, productName='Watch', price=12000, productCategory='Electronics'}]
+2025-11-08T15:38:40.507+05:30 DEBUG 26532 --- [order-service] [http-nio-5001-exec-5] c.p.c.OrderControllerWithFeignClient     : Order Details list : [OrderDetails{productId=1, productName='Charger', price=250, productCategory='Electronics'}, OrderDetails{productId=2, productName='Mobile', price=25000, productCategory='Electronics'}, OrderDetails{productId=3, productName='TV', price=25000, productCategory='Electronics'}, OrderDetails{productId=4, productName='Extension', price=1200, productCategory='Electronics'}, OrderDetails{productId=5, productName='Watch', price=12000, productCategory='Electronics'}]
+2025-11-08T15:38:52.941+05:30 DEBUG 26532 --- [order-service] [http-nio-5001-exec-6] c.p.service.OrderServiceWithFeignClient  : response returned by getProductById api  : [OrderDetails{productId=1, productName='Charger', price=250, productCategory='Electronics'}, OrderDetails{productId=2, productName='Mobile', price=25000, productCategory='Electronics'}, OrderDetails{productId=3, productName='TV', price=25000, productCategory='Electronics'}, OrderDetails{productId=4, productName='Extension', price=1200, productCategory='Electronics'}, OrderDetails{productId=5, productName='Watch', price=12000, productCategory='Electronics'}]
+2025-11-08T15:38:52.941+05:30 DEBUG 26532 --- [order-service] [http-nio-5001-exec-6] c.p.c.OrderControllerWithFeignClient     : Order Details list : [OrderDetails{productId=1, productName='Charger', price=250, productCategory='Electronics'}, OrderDetails{productId=2, productName='Mobile', price=25000, productCategory='Electronics'}, OrderDetails{productId=3, productName='TV', price=25000, productCategory='Electronics'}, OrderDetails{productId=4, productName='Extension', price=1200, productCategory='Electronics'}, OrderDetails{productId=5, productName='Watch', price=12000, productCategory='Electronics'}]
+2025-11-08T15:38:54.839+05:30 DEBUG 26532 --- [order-service] [http-nio-5001-exec-7] c.p.service.OrderServiceWithFeignClient  : response returned by getProductById api  : [OrderDetails{productId=1, productName='Charger', price=250, productCategory='Electronics'}, OrderDetails{productId=2, productName='Mobile', price=25000, productCategory='Electronics'}, OrderDetails{productId=3, productName='TV', price=25000, productCategory='Electronics'}, OrderDetails{productId=4, productName='Extension', price=1200, productCategory='Electronics'}, OrderDetails{productId=5, productName='Watch', price=12000, productCategory='Electronics'}]
+2025-11-08T15:38:54.840+05:30 DEBUG 26532 --- [order-service] [http-nio-5001-exec-7] c.p.c.OrderControllerWithFeignClient     : Order Details list : [OrderDetails{productId=1, productName='Charger', price=250, productCategory='Electronics'}, OrderDetails{productId=2, productName='Mobile', price=25000, productCategory='Electronics'}, OrderDetails{productId=3, productName='TV', price=25000, productCategory='Electronics'}, OrderDetails{productId=4, productName='Extension', price=1200, productCategory='Electronics'}, OrderDetails{productId=5, productName='Watch', price=12000, productCategory='Electronics'}]
+2025-11-08T15:38:55.970+05:30 DEBUG 26532 --- [order-service] [http-nio-5001-exec-8] c.p.service.OrderServiceWithFeignClient  : response returned by getProductById api  : [OrderDetails{productId=1, productName='Charger', price=250, productCategory='Electronics'}, OrderDetails{productId=2, productName='Mobile', price=25000, productCategory='Electronics'}, OrderDetails{productId=3, productName='TV', price=25000, productCategory='Electronics'}, OrderDetails{productId=4, productName='Extension', price=1200, productCategory='Electronics'}, OrderDetails{productId=5, productName='Watch', price=12000, productCategory='Electronics'}]
+2025-11-08T15:38:55.970+05:30 DEBUG 26532 --- [order-service] [http-nio-5001-exec-8] c.p.c.OrderControllerWithFeignClient     : Order Details list : [OrderDetails{productId=1, productName='Charger', price=250, productCategory='Electronics'}, OrderDetails{productId=2, productName='Mobile', price=25000, productCategory='Electronics'}, OrderDetails{productId=3, productName='TV', price=25000, productCategory='Electronics'}, OrderDetails{productId=4, productName='Extension', price=1200, productCategory='Electronics'}, OrderDetails{productId=5, productName='Watch', price=12000, productCategory='Electronics'}]
